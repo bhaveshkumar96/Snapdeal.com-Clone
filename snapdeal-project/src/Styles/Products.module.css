@@ -1,0 +1,29 @@
+.products-filter-container{
+    display: flex;
+    gap: 10px;
+    /* width: '95%';
+    margin: 'auto'; */
+   }
+   
+   .filter-component{
+    width: 15%;
+       border-right: 1px solid gray;
+
+   }
+   
+   .product-list{
+       width: 85%;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
+    gap:10px ;
+   }
+
+   .container{
+    width: '90%';
+    margin: 'auto';
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, max-content)); 
+     /* grid-template-columns: repeat(3,1fr);
+    gap: '10px';
+    justify-content: 'center'; */
+}   
