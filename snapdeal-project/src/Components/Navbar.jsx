@@ -35,8 +35,7 @@ export const Navbar = () => {
           </div>
           <div className={styles.moreitems2}>
             <a href="" id="user_name"
-              >Sign In <i class="fas fa-user-circle"></i
-            ></a>
+              >Sign In <i class="fas fa-user-circle"></i></a>
 
             <div  className={styles.signsub} >
               <ul>
