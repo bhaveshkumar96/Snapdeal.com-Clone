@@ -19,7 +19,6 @@ export const getData =(param, pass='mens')=>(dispatch)=>{
     .then((res)=> {
         dispatch(getProductsSuccess(res.data))
         console.log(res.data)
-        
     })
     .catch((err)=> dispatch(getProductsFailure))
 }

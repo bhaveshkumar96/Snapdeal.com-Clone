@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getData } from '../Products/action'
+import { getData } from '../Redux/Products/action'
 import ProductCards from './ProductCards'
 import styles from '../Styles/Products.module.css'
 import { useLocation, useSearchParams } from 'react-router-dom'
+import { store } from '../Redux/store'
 
 const ProductList = () => {
     const dispatch= useDispatch()
-    const product = useSelector((store)=> store.product)
-
+    const product = useSelector((store)=> store.MensProductReducer.product)
+    
     const location = useLocation()
   const [searchParams] = useSearchParams()
   console.log(location)

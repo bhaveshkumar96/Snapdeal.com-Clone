@@ -6,7 +6,7 @@ const initialState={
     isError:false,
     isLoading:false
 }
-const reducer = (state=initialState, {type, payload}) => {
+export const reducer = (state=initialState, {type, payload}) => {
   switch(type){
     case GET_PRODUCTS_REQUEST:
         return {...state, isLoading:true}
@@ -18,4 +18,3 @@ const reducer = (state=initialState, {type, payload}) => {
   }
 }
 
-export default reducer

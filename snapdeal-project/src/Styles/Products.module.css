@@ -6,13 +6,13 @@
    }
    
    .filter-component{
-    width: 15%;
+    width: 20%;
        border-right: 1px solid gray;
 
    }
    
    .product-list{
-       width: 85%;
+       width: 80%;
     /* display: grid;
     grid-template-columns: repeat(3,1fr); */
     gap:10px ;
@@ -23,6 +23,7 @@
     margin: 'auto';
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, max-content)); 
+    grid-gap: 10px
      /* grid-template-columns: repeat(3,1fr);
     gap: '10px';
     justify-content: 'center'; */

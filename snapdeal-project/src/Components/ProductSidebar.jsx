@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
+import {Heading} from '@chakra-ui/react'
 
 const ProductSidebar = () => {
   const [searchParams, setSearchparams] = useSearchParams()
@@ -33,7 +34,8 @@ const ProductSidebar = () => {
   }, [category,order])
   return (
     <div>
-      <h3>Filter By</h3>     
+      {/* <h3>Filter By</h3>      */}
+        <Heading as='h4' size='md' color={"red"}>Filter By</Heading>
       <div>
         <input type="checkbox" value="Shirt" onChange={handleFilter}
           checked={category.includes("Shirt")} />
@@ -63,7 +65,7 @@ const ProductSidebar = () => {
       <br/>
       <br/>
 
-    <h3>Sort By Order</h3>
+    {/* <h3>Sort By Order</h3>
     <div onChange={handleSort} style={{display:'grid', fontSize:'bold'}}>
       <input type="radio" name="sort_by" value={"asc"} 
       defaultChecked={order=== "asc"}/>
@@ -71,7 +73,14 @@ const ProductSidebar = () => {
       <input type="radio" name="sort_by" value={"desc"}
       defaultChecked={order=== "desc"}/>
       <label>Price High To Low</label>
-    </div>
+    </div> */}
+    <Heading as='h4' size='md' color={"red"}>Sort By Order</Heading>
+        <div onChange={handleSort}>
+            <input type="radio" name="sort_by" value={"asc"} defaultChecked={order === "asc"}/>
+            <Heading as='h5' size='sm' color={"yellow.500"} htmlFor="">Price Low To High</Heading>
+            <input type="radio" name="sort_by" value={"desc"} defaultChecked={order === "desc"}/>
+            <Heading as='h5' size='sm' color={"yellow.500"} htmlFor="">Price High To Low</Heading>
+        </div>
     </div>
   )
 }
