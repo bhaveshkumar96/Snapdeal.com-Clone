@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import {Heading} from '@chakra-ui/react'
+import { BsJustifyLeft } from 'react-icons/bs'
 
 const ProductSidebar = () => {
   const [searchParams, setSearchparams] = useSearchParams()
@@ -33,10 +34,11 @@ const ProductSidebar = () => {
     setSearchparams(params)
   }, [category,order])
   return (
-    <div>
+    <div style={{fontSize:'20px'}}>
       {/* <h3>Filter By</h3>      */}
         <Heading as='h4' size='md' color={"red"}>Filter By</Heading>
-      <div>
+        {/* <div style={{fontSize:'20px'}}> */}
+      <div >
         <input type="checkbox" value="Shirt" onChange={handleFilter}
           checked={category.includes("Shirt")} />
         <label>Shirt</label>
@@ -62,6 +64,7 @@ const ProductSidebar = () => {
           checked={category.includes("Jacket")} />
         <label>Jacket</label>
       </div>
+      {/* </div> */}
       <br/>
       <br/>
 

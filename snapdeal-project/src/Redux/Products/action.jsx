@@ -20,5 +20,13 @@ export const getData =(param, pass='mens')=>(dispatch)=>{
         dispatch(getProductsSuccess(res.data))
         console.log(res.data)
     })
-    .catch((err)=> dispatch(getProductsFailure))
+    .catch((err)=> dispatch(getProductsFailure()))
+}
+
+export const getProducts = (param={})=>(dispatch) =>{
+    dispatch(getProductsRequest())
+    axios.get("https://snapdeal-productapi.onrender.com/beauty",param).then((res)=>{
+        console.log(res)
+         dispatch(getProductsSuccess(res.data))
+    }).catch((err)=> dispatch(getProductsFailure()))
 }

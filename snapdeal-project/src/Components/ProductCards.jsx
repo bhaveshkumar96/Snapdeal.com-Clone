@@ -12,20 +12,9 @@ import {
   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
   
-//   const data = {
-//     isNew: true,
-//     imageURL:
-//       'https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4600&q=80',
-//     name: 'Wayfarer Classic',
-//     price: 4.5,
-//     rating: 4.2,
-//     numReviews: 34,
-//   };
-   
-  
   function Rating({rating}) {       //rating = star
     return (
-      <Box d="flex" alignItems="center">
+      <Box display="flex" alignItems="center">
         {Array(5)
           .fill('')
           .map((_, i) => {
@@ -55,7 +44,9 @@ import {
 
 console.log("data is :", name )  
 return (
-      <Flex p={50} w="full"alignItems="center" justifyContent="center"  style={{border:"1px solid gray", gap:'10px'}}>
+      <Flex p={6} w="full"alignItems="center" justifyContent="center"  
+      // style={{border:"1px solid gray", gap:'5px', height:"400px"}}
+      >
         <Box
           bg={useColorModeValue('white', 'gray.800')}
           maxW="sm"
@@ -76,9 +67,9 @@ return (
   
           <Image
             src={image}
-            // size={'md'} 
-            boxSize='350px'
-    objectFit='cover'
+            size={'md'} 
+            // boxSize='180px'
+    // objectFit='cover'  
             alt={`Picture of ${name}`}
             roundedTop="md"
           />
@@ -104,12 +95,12 @@ return (
                 size={'50px'}
                 label="Add to cart"
                 bg="white"
-                // placement={'top'}
+                placement={'top'}
                 color={'gray.800'}
                 fontSize={'1.2em'}>
                 <chakra.a href={'#'} display={'flex'}>
-                  {/* <Icon as={FiShoppingCart} h={10} w={10} alignSelf={'center'} /> */}
-                  <Icon as={FiShoppingCart} height={'40px'} width={'40px'} alignSelf={'center'} />
+                  <Icon as={FiShoppingCart} h={5} w={8} alignSelf={'center'} />
+                  {/* <Icon as={FiShoppingCart} height={'20px'} width={'20px'} alignSelf={'center'} /> */}
                 </chakra.a>
               </Tooltip>
             </Flex>
