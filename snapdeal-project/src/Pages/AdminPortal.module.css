@@ -1,0 +1,25 @@
+.formInput{
+padding: 5px;
+border: 1px solid gray;
+margin-top: 25px;
+margin-bottom: 15px;
+
+}
+.admitPortalForm{
+    margin-top: 15px;
+    width: 40%;
+    margin: auto;
+}
+
+.AdminProdcutCard{
+    display: grid;
+    width: 70%;
+    margin: auto;
+    gap: 20px;
+    /* grid-template-columns: repeat(4,1fr); */
+    justify-content: space-between;
+}
+.AdminProdcutCard img{
+    width: 10%;
+    /* grid-template-columns: repeat(4,1fr); */
+}
