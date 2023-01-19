@@ -10,7 +10,7 @@ Team of 5 Members
 5. Manish kumar Gupta cd 
 
 Area of Responsiblity
-1. Bhavesh  - Landing page 
+1. Bhavesh  - Landing page / Admin page 
 2. Vaishnavi - Authentication ( Login / Sign-up / Checkout-page )
 3. Surya Prakash - Products page ( men's)
 4. Bhairavnath - Products page ( women's)
