@@ -175,8 +175,8 @@ export const Footer = () => {
             cursor: "pointer",
           }}
         >
-          <p>
-            <b>Men:</b> Shirts for Men / Casual Shirts for Men / Formal Shirts
+          <p style={{marginLeft:"5px"}}>
+            <b >Men:</b> Shirts for Men / Casual Shirts for Men / Formal Shirts
             for Men / Hoodies for Men / Cotton Shirts for Men / T Shirts for Men
             / Polo T shirts / Kurta Pajama for Men / White Shirt / Black Shirt /
             Lower for Men / Trousers for Men / Jacket for Men / Formal Pants for
@@ -250,7 +250,7 @@ export const Footer = () => {
             style={{
               textAlign: "left",
               letterSpacing: "0",
-              marginLeft: "15px",
+              marginLeft: "8px",
             }}
           >
             About Snapdeal
