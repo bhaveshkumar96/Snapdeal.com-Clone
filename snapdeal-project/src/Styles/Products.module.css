@@ -6,24 +6,24 @@
    }
    
    .filter-component{
-    width: 20%;
+    width: 15%;
        border-right: 1px solid gray;
 
    }
    
    .product-list{
-       width: 80%;
+       width: 85%;
     /* display: grid;
     grid-template-columns: repeat(3,1fr); */
-    gap:10px ;
+    /* gap:2px ; */
    }
 
    .container{
-    width: '90%';
+    width: '100%';
     margin: 'auto';
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(300px, max-content)); 
-    grid-gap: 10px
+    /* grid-gap: 10px */
      /* grid-template-columns: repeat(3,1fr);
     gap: '10px';
     justify-content: 'center'; */
