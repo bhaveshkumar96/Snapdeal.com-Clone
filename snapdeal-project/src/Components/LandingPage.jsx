@@ -504,7 +504,7 @@ export const LandingPage = () => {
                 Vighnraj Jewels Circular Blue Colored 
                 </Text>
                 <p>Price : 1500 Rs</p>
-                <p>50% off</p>
+                
               </Stack>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/f/4/5/large/Scotlon-Krishna-with-Cute-Calf-SDL923415679-3-06886.webp" alt="221" w={"100%"}/>

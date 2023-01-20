@@ -149,6 +149,7 @@ export const AdminPortal = () => {
                 <Th color={"white"} fontSize="15px">
                   DELETE
                 </Th>
+                
               </Tr>
             </Thead>
             {adminData.length > 0 &&
@@ -157,7 +158,7 @@ export const AdminPortal = () => {
                   <Tbody>
                     <Tr key={el.name}>
                       <Td>{el.id} </Td>
-                      <Td key={el.price}>{el.name}</Td>
+                      <Td key={el.price}>  {el.name}</Td>
                       <Td>{el.price}</Td>
                       
                       <Td>

@@ -8,10 +8,10 @@ import { AdminPortal } from './Pages/AdminPortal';
 function App() {
   return (
     <div className="App">
-      {/* <Navbar/>
+      <Navbar/>
       <LandingPage/>
-    <Footer/> */}
-    <AdminPortal/>
+    <Footer/>
+    {/* <AdminPortal/> */}
     </div>
   );
 }
