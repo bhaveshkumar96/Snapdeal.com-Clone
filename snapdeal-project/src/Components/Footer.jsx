@@ -1,3 +1,4 @@
+import { HStack } from "@chakra-ui/react";
 import styles from "./Navbar.module.css";
 export const Footer = () => {
   return (
@@ -95,72 +96,72 @@ export const Footer = () => {
         <div className={styles.pay}>
           <h2>PAYMENTS</h2>
           <div className={styles.icons}>
-            <i>
+            <HStack justifyContent={"space-between"} mt="15px">
               {" "}
               <img
                 width={"10%"}
                 src="https://img.icons8.com/color/48/null/mastercard-credit-card.png"
               />
-            </i>
-            <i>
+            
+            
               <img
                 width={"10%"}
                 src="https://img.icons8.com/ios/50/null/visa.png"
               />
-            </i>
-            <i>
+            
+            
               <img
                 width={"10%"}
                 src="https://img.icons8.com/fluency/48/null/paypal.png"
               />
-            </i>
-            <i>
+            
+            
               <img
                 width={"10%"}
                 src="https://img.icons8.com/emoji/48/null/credit-card-emoji.png"
               />
-            </i>
-            <i>
+            
               <img
                 width={"10%"}
                 src="https://img.icons8.com/ios-filled/50/null/apple-pay.png"
               />
-            </i>
+            </HStack>
           </div>
         </div>
         <div className={styles.social}>
           <h2>CONNECT</h2>
           <div className={styles.icons}>
-            <i>
+            <HStack justifyContent={"space-between"} mt="15px">
+          
               <img
                 width={"10%"}
                 src="https://img.icons8.com/fluency/48/null/facebook-new.png"
               />
-            </i>
-            <i>
+            
+          
               <img
                 width={"10%"}
                 src="https://img.icons8.com/color/48/null/youtube-play.png"
               />
-            </i>
-            <i>
+           
               <img
                 width={"10%"}
                 src="https://img.icons8.com/color/48/null/twitter--v1.png"
               />
-            </i>
-            <i>
+            
+          
               <img
                 width={"10%"}
                 src="https://img.icons8.com/color/48/null/instagram-new--v1.png"
               />
-            </i>
-            <i>
+            
+          
               <img
                 width={"10%"}
                 src="https://img.icons8.com/color/48/null/pinterest--v1.png"
               />
-            </i>
+            
+            </HStack>
           </div>
         </div>
       </div>
@@ -175,7 +176,7 @@ export const Footer = () => {
             cursor: "pointer",
           }}
         >
-          <p style={{marginLeft:"5px"}}>
+          <p style={{marginLeft:"5px",marginTop:"10px",marginBottom:"10px"}}>
             <b >Men:</b> Shirts for Men / Casual Shirts for Men / Formal Shirts
             for Men / Hoodies for Men / Cotton Shirts for Men / T Shirts for Men
             / Polo T shirts / Kurta Pajama for Men / White Shirt / Black Shirt /
@@ -189,6 +190,7 @@ export const Footer = () => {
               fontSize: "12px",
               marginLeft: "5px",
               textAlign: "left",
+              marginTop:"10px",marginBottom:"10px"
             }}
           >
             <b>Women:</b> Tops for Women / Kurti / Cotton Sarees / Georgette
@@ -205,6 +207,7 @@ export const Footer = () => {
               fontSize: "12px",
               marginLeft: "5px",
               textAlign: "left",
+              marginTop:"10px",marginBottom:"10px"
             }}
           >
             <b>Footwear:</b> Men's Footwear / Casual Shoes for Men / Formal
@@ -219,6 +222,7 @@ export const Footer = () => {
               fontSize: "12px",
               marginLeft: "5px",
               textAlign: "left",
+              marginTop:"10px",marginBottom:"10px"
             }}
           >
             <b>Home & Kitchen:</b> Wall Painting / Wall Stickers / Dream Catcher
@@ -233,6 +237,7 @@ export const Footer = () => {
               fontSize: "12px",
               marginLeft: "5px",
               textAlign: "left",
+              marginTop:"10px",marginBottom:"10px"
             }}
           >
             <b>Electronics:</b> Bluetooth Speakers / Headphones / Earphone /
