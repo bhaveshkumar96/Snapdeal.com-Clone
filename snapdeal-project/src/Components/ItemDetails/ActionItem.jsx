@@ -50,7 +50,7 @@ const ActionItem = ({ product }) => {
         <LeftContainer>
             <Image src={product.image} /><br />
             <StyledButton onClick={() => addItemToCart()} style={{marginRight: 10, background: '#3F3F3F'}} variant="contained"><Cart />Add to Cart</StyledButton>
-            <StyledButton style={{background: '#E40046'}} variant="contained"><Flash /> Buy Now</StyledButton>
+            <StyledButton onClick={() => buyNow()} style={{background: '#E40046'}} variant="contained"><Flash /> Buy Now</StyledButton>
         </LeftContainer>
     )
 }

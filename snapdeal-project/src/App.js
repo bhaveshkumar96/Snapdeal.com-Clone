@@ -9,8 +9,16 @@ import Cart from './Components/Cart/Cart';
 
 function App() {
   return (
-       <DetailView/>
-      // <Cart/>
+    <BrowserRouter>
+  
+    <Box style={{marginTop: 54}}>
+      <Routes>
+       
+        <Route path= '/product/:id' element={<DetailView />} />
+        <Route path= '/cart' element={<Cart />} />
+      </Routes>
+    </Box>
+  </BrowserRouter>
      
   );
 }

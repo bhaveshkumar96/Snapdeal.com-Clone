@@ -46,7 +46,7 @@ const DetailView = () => {
     return (
       
         <Component>
-           <h3>Cart Page</h3>
+           <h3>Single Product Page</h3>
             { product && Object.keys(product).length &&
                 <Container > 
                     <Grid item lg={4} md={4} sm={8} xs={12}>
