@@ -12,14 +12,16 @@ margin-bottom: 15px;
 }
 
 .AdminProdcutCard{
-    display: grid;
-    width: 70%;
     margin: auto;
-    gap: 20px;
-    /* grid-template-columns: repeat(4,1fr); */
-    justify-content: space-between;
+  width: 90%;
+  display: grid;
+
 }
 .AdminProdcutCard img{
-    width: 10%;
+    width: 5%;
     /* grid-template-columns: repeat(4,1fr); */
+}
+.TableContainer{
+    width: 50%;
+    margin: auto;
 }

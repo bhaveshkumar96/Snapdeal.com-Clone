@@ -27,7 +27,7 @@ export const Navbar = () => {
         </div>
         <div className={styles.search}>
           <input type="text" placeholder="Search products & brands" />
-          <button class="btn"><i class="fas fa-search"></i> Search</button>
+          <button ><i class="fas fa-search"></i> Search</button>
         </div>
         <div  className={styles.moreitemslist}>
           <div  className={styles.moreitems1}>

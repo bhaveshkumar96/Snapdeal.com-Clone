@@ -1,21 +1,44 @@
-import { HStack } from "@chakra-ui/react";
-
-export const AdminProductCard = ({name,mrp,price,discount,img}) => {
-   
+import { Button, HStack, Image, Text } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+} from "@chakra-ui/react";
+export const AdminProductCard = ({ name, price }) => {
   return (
     <>
-      {/* <HStack w={"100%"}>
-        <Image
-        width={"10%"}
-          alt="qwq"
-          src="https://cdn.shopify.com/s/files/1/1002/7150/products/New-Mockups---no-hanger---TShirt-Yellow.jpg?v=1639657077"
-        />
-        <Text>T-Shirt</Text>
-        <Text>1212</Text>
-        <Button>EDIT</Button>
-        <Button>DELETE</Button>
-      </HStack> */}
-      <HStack style={{boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",gap:"25px"}}>
+      <TableContainer >
+        <Table size="sm">
+          <Thead>
+            <Tr>
+              <Th>Name</Th>
+              <Th>Price</Th>
+
+              <Th>EDIT</Th>
+              <Th>DELETE</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>{name}</Td>
+              <Td>{price}</Td>
+              <Td>
+                <button>EDIT</button>{" "}
+              </Td>
+              <Td>
+                <button>DELETE</button>{" "}
+              </Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </TableContainer>
+      {/* <HStack style={{boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px",gap:"25px"}}>
       <img
         src={img}
         alt="Caffe Latte"
@@ -49,8 +72,7 @@ export const AdminProductCard = ({name,mrp,price,discount,img}) => {
       </button>
 </div>
       
-      </HStack>
-     
+      </HStack> */}
     </>
   );
 };
