@@ -19,8 +19,6 @@
     "react-bootstrap-validation": "^0.1.11",
     "react-card-slider-component": "^1.0.9",
     "react-dom": "^18.2.0",
-    "react-matrix-parallax": "^2.1.5",
-    "react-parallax": "^3.5.1",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
     "redux-thunk": "^2.4.2",

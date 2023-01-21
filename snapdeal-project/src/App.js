@@ -12,8 +12,8 @@ function App() {
       {/* <Navbar/>
       <LandingPage/>
     <Footer/> */}
-    {/* <AdminPortal/> */}
-    <PageNotFound/>
+    <AdminPortal/>
+    {/* <PageNotFound/> */}
     </div>
   );
 }
