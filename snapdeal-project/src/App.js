@@ -9,7 +9,7 @@ import {PageNotFound} from './Components/PageNotFound';
 function App() {
   return (
     <div className="App">
-    
+    <AdminPortal/>
     </div>
   );
 }
