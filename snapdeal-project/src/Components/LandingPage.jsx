@@ -512,7 +512,7 @@ export const LandingPage = () => {
                 Scotlon Krishna with Cute Calf
                 </Text>
                 <p>Price : 1200 Rs</p>
-                <p>40% off</p>
+                
               </Stack>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/j/r/3/large/HVBK-Cotton-Blend-Grey-Self-SDL663200475-1-65025.webp" alt="221" w={"100%"}/>
@@ -520,7 +520,7 @@ export const LandingPage = () => {
                 HVBK Cotton Blend Grey Self Design T-Shirt
                 </Text>
                 <p>Price : 120 Rs</p>
-                <p>80% off</p>
+                
               </Stack>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/b/2/y/large/Vastu-Laughing-buddha-SDL982981024-1-34a94.webp" alt="221" w={"100%"}/>
@@ -528,7 +528,7 @@ export const LandingPage = () => {
                 Vastu Laughing buddha
                 </Text>
                 <p>Price : 400 Rs</p>
-                <p>80% off</p>
+              
               </Stack>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/j/v/1/large/HELLCAT-Black-and-Green-Full-SDL984712037-1-dc7ba.webp" alt="221" w={"100%"}/>
@@ -536,12 +536,11 @@ export const LandingPage = () => {
                 HELLCAT Black and Green Full Sleeve Tshirt Pack of 2
                 </Text>
                 <p>Price : 1212 Rs</p>
-                <p>50% off</p>
               </Stack>
             </HStack>
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>POPULAR PRODUCTS</h2>
             <HStack className={styles.trending}>
-              <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
+              <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://images.pexels.com/photos/1381553/pexels-photo-1381553.jpeg?auto=compress&cs=tinysrgb&w=600" alt="221" w={"100%"}/>
                 <Text>
                 Coat for Women 
@@ -549,7 +548,7 @@ export const LandingPage = () => {
                 <p>Price : 1500 Rs</p>
            
               </Stack>
-              <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
+              <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://images.pexels.com/photos/1035692/pexels-photo-1035692.jpeg?auto=compress&cs=tinysrgb&w=600" alt="221" w={"100%"}/>
                 <Text>
                 Black Jacket for Girls
@@ -557,7 +556,7 @@ export const LandingPage = () => {
                 <p>Price : 1200 Rs</p>
                 
               </Stack>
-              <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
+              <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://images.pexels.com/photos/2229712/pexels-photo-2229712.jpeg?auto=compress&cs=tinysrgb&w=600" alt="221" w={"100%"}/>
                 <Text>
                 Men's Denim Jacket
@@ -565,7 +564,7 @@ export const LandingPage = () => {
                 <p>Price : 1220 Rs</p>
               
               </Stack>
-              <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
+              <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://images.pexels.com/photos/3538028/pexels-photo-3538028.jpeg?auto=compress&cs=tinysrgb&w=600" alt="221" w={"100%"}/>
                 <Text >
                 Office Wears
@@ -573,7 +572,7 @@ export const LandingPage = () => {
                 <p>Price : 400 Rs</p>
                 
               </Stack>
-              <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
+              <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://images.pexels.com/photos/1750776/pexels-photo-1750776.jpeg?auto=compress&cs=tinysrgb&w=600" alt="221" w={"100%"}/>
                 <Text>
                 Velvet Jacket

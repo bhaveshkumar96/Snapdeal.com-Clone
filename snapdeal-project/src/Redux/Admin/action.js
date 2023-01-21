@@ -68,3 +68,11 @@ export const addAdminData = (newData) => (dispatch) => {
         });
     
   };
+
+  export const updateAdminData = ()=>{
+
+  }
+
+  export const deleteAdminData = ()=>{
+    axios.delete(`https://snapdeal-productapi.onrender.com/beauty`)
+  }

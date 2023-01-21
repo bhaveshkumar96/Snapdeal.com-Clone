@@ -1,4 +1,4 @@
-import { Button, FormControl, FormLabel, Image, Input } from "@chakra-ui/react";
+import { Button, ButtonGroup, FormControl, FormLabel, Image, Input } from "@chakra-ui/react";
 import {
   Table,
   Thead,
@@ -15,6 +15,7 @@ import { Navbar } from "../Components/Navbar";
 import { addAdminData, getAdminData } from "../Redux/Admin/action";
 import styles from "./AdminPortal.module.css";
 import { useDispatch, useSelector } from "react-redux";
+import SidebarWithHeader from "./SidebarWithHeader";
 export const AdminPortal = () => {
   const adminData = useSelector((store) => store.AdminReducer.adminData);
   const dispatch = useDispatch();
@@ -24,60 +25,6 @@ export const AdminPortal = () => {
   useEffect(() => {
     dispatch(getAdminData);
   }, []);
-
-  //console.log(adminData);
-  // const products = [
-  //   {
-  //     name: "N95 White Face Mask Reusable SDL636079837",
-  //     mrp: "159",
-  //     price: "129",
-  //     discount: "10",
-  //     img: "https://n1h2.sdlcdn.com/imgs/j/l/3/large/N95-White-Face-Mask-Reusable-SDL636079837-1-efb91.webp",
-  //   },
-  //   {
-  //     name: "Vighnraj Jewels Circular Blue Colored SDL992834142",
-  //     mrp: "259",
-  //     price: "159",
-  //     discount: "61",
-  //     img: "https://n1h2.sdlcdn.com/imgs/j/x/9/large/Vighnraj-Jewels-Circular-Blue-Colored-SDL992834142-1-29260.webp",
-  //   },
-  //   {
-  //     name: "Scotlon Krishna with Cute Calf SDL923415679",
-  //     mrp: "199",
-  //     price: "123",
-  //     discount: "81",
-  //     img: "https://n1h2.sdlcdn.com/imgs/f/4/5/large/Scotlon-Krishna-with-Cute-Calf-SDL923415679-3-06886.webp",
-  //   },
-  //   {
-  //     name: "HVBK Cotton Blend Grey Self Design T-Shirt",
-  //     mrp: "799",
-  //     price: "289",
-  //     discount: "64",
-  //     img: "https://n1h2.sdlcdn.com/imgs/j/r/3/large/HVBK-Cotton-Blend-Grey-Self-SDL663200475-1-65025.webp",
-  //   },
-  //   {
-  //     name: "Shiv Shakti Kavach 5 Mala With Shiv Trishul",
-  //     mrp: "699",
-  //     price: "130",
-  //     discount: "81",
-  //     img: "https://n1h2.sdlcdn.com/imgs/j/a/8/large/Shiv-Shakti-Kavach-5-Mala-SDL443330653-1-a0955.webp",
-  //   },
-  //   {
-  //     name: "Sambhav Deals PU Tan Formal Regular Wallet",
-  //     mrp: "1299",
-  //     price: "143",
-  //     discount: "89",
-  //     img: "https://n1h2.sdlcdn.com/imgs/j/m/d/large/Sambhav-Deals-PU-Tan-Formal-SDL622747316-1-0fc45.webp",
-  //   },
-  //   {
-  //     name: "Vastu Laughing buddha",
-  //     mrp: "499",
-  //     price: "223",
-  //     discount: "38",
-  //     img: "https://n1h2.sdlcdn.com/imgs/b/2/y/large/Vastu-Laughing-buddha-SDL982981024-1-34a94.webp",
-  //   },
-  // ];
-  //console.log(name, price, imageUrl);
   const handleAddData = (e) => {
     e.preventDefault();
     let newData = {
@@ -94,14 +41,24 @@ export const AdminPortal = () => {
     setImageUrl("");
     setPrice("");
   };
-
+  console.log(adminData);
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
+      <SidebarWithHeader />
       <div style={{ width: "40%", margin: "auto" }}>
-        <h3 style={{ marginTop: "20px", marginBottom: "30px" }}>ADD PRODUCT</h3>
+        <h3
+          style={{
+            marginTop: "20px",
+            marginBottom: "30px",
+            fontWeight: "bolder",
+            fontSize: "20px",
+          }}
+        >
+          ADD PRODUCT
+        </h3>
 
-        <form onSubmit={handleAddData}>
+        <form onSubmit={handleAddData} margin="auto">
           <FormLabel>Name</FormLabel>
           <Input
             type="name"
@@ -121,7 +78,13 @@ export const AdminPortal = () => {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
-          <Input type={"submit"} />
+          <Input
+            type={"submit"}
+            border="1px solid black"
+            fontSize={"20px"}
+            marginBottom="35px"
+            cursor={"pointer"}
+          />
         </form>
       </div>
 
@@ -129,60 +92,37 @@ export const AdminPortal = () => {
   return <AdminProductCard  {...el}/>
 })} */}
       <div className={styles.AdminProdcutCard}>
-        <TableContainer>
-          <Table size="sm" variant="striped" colorScheme="linkedin">
-            <Thead border={"1px solid white"} bgColor="blue.500">
-              <Tr>
-                <Th color={"white"} fontSize="15px">
-                  S. NO.
-                </Th>
-                <Th color={"white"} fontSize="15px">
-                  Name
-                </Th>
-                <Th color={"white"} fontSize="15px">
-                  Price
-                </Th>
-                
-                <Th color={"white"} fontSize="15px">
-                  EDIT
-                </Th>
-                <Th color={"white"} fontSize="15px">
-                  DELETE
-                </Th>
-                
+        <TableContainer ml={"200px"} >
+          <Table variant='striped' colorScheme='teal' >
+            <Thead bgColor={"blue.400"} >
+              <Tr >
+                <Th color="white">S. No.</Th>
+                <Th color="white">Name</Th>
+                <Th color="white" isNumeric>Price</Th>
+                <Th color="white">Image</Th>
+                <Th color="white">EDIT</Th>
+                <Th color="white">DELETE</Th>
               </Tr>
             </Thead>
             {adminData.length > 0 &&
               adminData.map((el) => {
                 return (
                   <Tbody>
-                    <Tr key={el.name}>
+                    <Tr>
                       <Td>{el.id} </Td>
-                      <Td key={el.price}>  {el.name}</Td>
-                      <Td>{el.price}</Td>
-                      
+                      <Td> {el.name}</Td>
+                      <Td isNumeric> {el.price} </Td>
                       <Td>
                         {" "}
-                        <button
-                          style={{
-                            border: "1px solid black",
-                            padding: "5px 10px 5px 10px",
-                            marginLeft:""
-                          }}
-                        >
-                          EDIT
-                        </button>{" "}
+                        <img src={el.image} />{" "}
+                      </Td>
+                      <Td  >
+                        {" "}
+                        <Button bgColor="" >EDIT</Button>{" "}
                       </Td>
                       <Td>
                         {" "}
-                        <button
-                          style={{
-                            border: "1px solid black",
-                            padding: "5px 10px 5px 10px",
-                          }}
-                        >
-                          DELETE
-                        </button>{" "}
+                        <Button>DELETE</Button>{" "}
                       </Td>
                     </Tr>
                   </Tbody>
@@ -191,8 +131,8 @@ export const AdminPortal = () => {
           </Table>
         </TableContainer>
       </div>
-
-      <Footer />
+      {/* 
+      <Footer /> */}
     </>
   );
 };
