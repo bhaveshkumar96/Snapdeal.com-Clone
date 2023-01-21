@@ -15,6 +15,7 @@ const AdminPage = () => {
           const {name, value} = e.target
           setData({...data,[name]:value})
     }
+    console.log(name)
     const handleSubmit = (e) =>{
           e.preventDefault()
         console.log("button data",data)
@@ -34,7 +35,7 @@ const AdminPage = () => {
             <Input type="text" name="description" placeholder='Enter Decription' onChange={handleChange} />
             <FormLabel htmlFor="" >Price</FormLabel>
             <Input type="number"  name='price' placeholder='Enter Price' onChange={handleChange}/>
-            <FormLabel htmlFor="">Enter Image Url</FormLabel>
+            <FormLabel htmlFor="">Enter Image URL</FormLabel>
             <Input type="text" name='image' placeholder='Enter Image url' onChange={handleChange}/>
             <Button onClick={handleSubmit} colorScheme='red'>Add Products</Button>
         </FormControl>
