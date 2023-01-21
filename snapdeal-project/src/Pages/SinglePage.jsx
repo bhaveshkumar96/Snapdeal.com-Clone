@@ -21,7 +21,6 @@ const SinglePage = () => {
     <div>
       {data && <ProductCards image={data.image} name={data.name} price={data.price} category={data.category} shipping={data.shipping}  star={data.star} />
       }
-
     </div>
   )
 }
