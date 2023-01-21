@@ -9,11 +9,7 @@ import {PageNotFound} from './Components/PageNotFound';
 function App() {
   return (
     <div className="App">
-      {/* <Navbar/>
-      <LandingPage/>
-    <Footer/> */}
-    <AdminPortal/>
-    {/* <PageNotFound/> */}
+    
     </div>
   );
 }
