@@ -1,10 +1,11 @@
-import { legacy_createStore, combineReducers, applyMiddleware } from "redux";
-// import thunk from "redux-thunk";
+import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import thunk from "redux-thunk";
-
+// import { reducer as productReducer} from "./BeutyProducts/reducer"
+import {reducer as MensProductReducer} from "./Products/reducer";
 import { reducer as LoginReducer } from "./LoginAuth/reducer";
 import { reducer as SignupReducer } from "./SignupAuth/reducer";
-const rootReducer = combineReducers({ LoginReducer, SignupReducer });
+
+const rootReducer = combineReducers({ LoginReducer, SignupReducer,MensProductReducer });
 const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 
 export { store };
@@ -12,3 +13,5 @@ export { store };
 if (window.Cypress) {
   window.store = store;
 }
+
+
