@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, FormControl, FormLabel, Image, Input } from "@chakra-ui/react";
+import { Button, FormLabel, Image, Input } from "@chakra-ui/react";
 import {
   Table,
   Thead,
@@ -10,9 +10,12 @@ import {
 } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Footer } from "../Components/Footer";
-import { Navbar } from "../Components/Navbar";
-import { addAdminData, getAdminData } from "../Redux/Admin/action";
+import {
+  addAdminData,
+  deleteAdminData,
+  getAdminData,
+  updateAdminData,
+} from "../Redux/Admin/action";
 import styles from "./AdminPortal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import SidebarWithHeader from "./SidebarWithHeader";
@@ -21,7 +24,8 @@ export const AdminPortal = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
-  const [imageUrl, setImageUrl] = useState("");
+  const [image, setImage] = useState("");
+
   useEffect(() => {
     dispatch(getAdminData);
   }, []);
@@ -29,19 +33,33 @@ export const AdminPortal = () => {
     e.preventDefault();
     let newData = {
       name,
-      imageUrl,
+      image,
       price,
     };
 
     dispatch(addAdminData(newData)).then((res) => {
       dispatch(getAdminData);
-      console.log(newData);
+      //console.log(newData);
     });
     setName("");
-    setImageUrl("");
+    setImage("");
     setPrice("");
   };
-  console.log(adminData);
+  const handleDelete = (id) => {
+    dispatch(deleteAdminData(id)).then(() => {
+      dispatch(getAdminData);
+    });
+  };
+  const handleEdit = (id)=>{
+    let newEditData = {
+      id,
+      name,
+    }
+    dispatch(updateAdminData(newEditData)).then(() => {
+      dispatch(getAdminData);
+    });
+  }
+  //console.log(adminData);
   return (
     <>
       {/* <Navbar /> */}
@@ -75,8 +93,8 @@ export const AdminPortal = () => {
           <Input
             type="text"
             mb={"25px"}
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
           />
           <Input
             type={"submit"}
@@ -92,13 +110,15 @@ export const AdminPortal = () => {
   return <AdminProductCard  {...el}/>
 })} */}
       <div className={styles.AdminProdcutCard}>
-        <TableContainer ml={"200px"} >
-          <Table variant='striped' colorScheme='teal' >
-            <Thead bgColor={"blue.400"} >
-              <Tr >
+        <TableContainer ml={"200px"}>
+          <Table variant="striped" colorScheme="teal">
+            <Thead bgColor={"blue.400"}>
+              <Tr>
                 <Th color="white">S. No.</Th>
                 <Th color="white">Name</Th>
-                <Th color="white" isNumeric>Price</Th>
+                <Th color="white" isNumeric>
+                  Price
+                </Th>
                 <Th color="white">Image</Th>
                 <Th color="white">EDIT</Th>
                 <Th color="white">DELETE</Th>
@@ -111,18 +131,17 @@ export const AdminPortal = () => {
                     <Tr>
                       <Td>{el.id} </Td>
                       <Td> {el.name}</Td>
-                      <Td isNumeric> {el.price} </Td>
+                      <Td isNumeric>Price : {el.price} </Td>
                       <Td>
-                        {" "}
-                        <img src={el.image} />{" "}
-                      </Td>
-                      <Td  >
-                        {" "}
-                        <Button bgColor="" >EDIT</Button>{" "}
+                        <img src={el.image} />
                       </Td>
                       <Td>
-                        {" "}
-                        <Button>DELETE</Button>{" "}
+                        <Button border={"1px solid gray"}  onClick={()=>handleEdit(el.id)}>EDIT</Button>
+                      </Td>
+                      <Td>
+                        <Button border={"1px solid gray"}  onClick={()=> handleDelete(el.id)}>
+                          DELETE
+                        </Button>
                       </Td>
                     </Tr>
                   </Tbody>

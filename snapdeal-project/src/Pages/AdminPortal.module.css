@@ -19,7 +19,7 @@ margin-bottom: 15px;
 
 }
 .AdminProdcutCard img{
-    width: 5%;
+width: 20%;
 
     /* grid-template-columns: repeat(4,1fr); */
 }
