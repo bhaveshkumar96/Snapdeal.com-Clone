@@ -9,6 +9,7 @@ import Signup from '../Components/Signup'
 import  Login  from '../Components/Login/Login'
 import  Checkout  from '../Components/Checkout/Checkout'
 import { AdminPortal } from './AdminPortal'
+import AddCart from '../Components/AddCart'
 
 const MainRoutes = () => {
 
@@ -22,6 +23,7 @@ const MainRoutes = () => {
         <Route path="/product" element={<ProductPage/>}></Route>
         <Route path="/products/:id" element={<SinglePage/>}></Route>
         <Route path="/products" element={<BeautyProductPage/>}></Route>
+        <Route path="/cart" element={<AddCart/>}></Route>
     </Routes>
   )
 }

@@ -42,10 +42,11 @@ const ProductList = () => {
     console.log("product", product);
      
     return (       
-      <div>
+      <div style={{margin:"auto", width:"100%"}}>
+
       <Box className={styles.container} >
         {isLoading && <Loader/>}
-        {product && product.map((el)=>{
+        {product.length>0 && product.map((el)=>{
           return <ProductCards key={el.id} id={el.id} name={el.name} image={el.image} price={el.price} category={el.category} shipping={el.shipping} star={el.star}/>
         })}
       </Box>

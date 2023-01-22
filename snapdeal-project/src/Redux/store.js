@@ -5,8 +5,8 @@ import thunk from "redux-thunk";
 import {reducer as MensProductReducer} from "./Products/reducer";
 import { reducer as LoginReducer } from "./LoginAuth/reducer";
 import { reducer as SignupReducer } from "./SignupAuth/reducer";
-
-const rootReducer = combineReducers({ LoginReducer, SignupReducer,MensProductReducer,AdminReducer });
+import { reducer as CartReducer} from "./Cart/reducer"
+const rootReducer = combineReducers({ LoginReducer, SignupReducer,MensProductReducer,AdminReducer,CartReducer });
 const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 
 export { store };

@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
+import HomeCarousel from "./Curousel/HomeCarousel";
 export const LandingPage = () => {
 
 
@@ -391,7 +392,7 @@ export const LandingPage = () => {
               <li>
                 <span>
                   <Link to={"/products"}>
-                  Women's Fashion
+                  Beauty,Health & Daily Needs
                   </Link>           
                   </span>
               </li>
@@ -399,7 +400,7 @@ export const LandingPage = () => {
                 <span>Toys,kids Fashion & More</span>
               </li>
               <li>
-                <span>Beauty,Health & Daily Needs</span>
+                <span> Women's Fashion</span>
               </li>
               <li>
                 <span>Sports,Fitness & Outdoor</span>
@@ -509,6 +510,7 @@ export const LandingPage = () => {
           {/* <!-- ---cardslider-- --> */}
           <div className={styles.Container}>
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>RECENTLY VIEWED PRODUCTS</h2>
+            <HomeCarousel/>
             <HStack className={styles.trending}>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/j/x/9/large/Vighnraj-Jewels-Circular-Blue-Colored-SDL992834142-1-29260.webp" alt="221" w={"100%"}/>
@@ -550,7 +552,6 @@ export const LandingPage = () => {
                 <p>Price : 1212 Rs</p>
               </Stack>
             </HStack>
-            
 
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>POPULAR PRODUCTS</h2>
             <HStack className={styles.trending}>

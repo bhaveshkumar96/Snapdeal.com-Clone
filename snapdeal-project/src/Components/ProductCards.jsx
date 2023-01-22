@@ -125,10 +125,10 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
               placement={'top'}
               color={'gray.800'}
               fontSize={'1.2em'}>
-              <chakra.a href={''} >
+              {/* <chakra.a href={''} > */}
                 <Icon as={FiShoppingCart} h={5} w={8} alignSelf={'center'} onClick={handdleCart} />
                 {/* <Icon as={FiShoppingCart} height={'20px'} width={'20px'} alignSelf={'center'} /> */}
-              </chakra.a>
+              {/* </chakra.a> */}
             </Tooltip>
           </Flex>
 

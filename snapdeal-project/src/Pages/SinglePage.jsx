@@ -7,6 +7,7 @@ import { getDataByID } from '../Redux/Products/action'
 import { Card, CardHeader, CardBody, CardFooter, Image, Heading,Text,Button } from '@chakra-ui/react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
+import SingleProduct from '../Components/Singleproduct'
 const SinglePage = () => {
     const {id}= useParams()
     console.log("id is:", id)
@@ -23,41 +24,9 @@ const SinglePage = () => {
   return (
     <div>
       <Navbar/>
-     <Card
-  direction={{ base: 'column', sm: 'row' }}
-  overflow='hidden'
-  variant='outline'
->
-  <Image
-    objectFit='cover'
-    maxW={{ base: '100%', sm: '200px' }}
-    src={data.image}
-    alt={data.name}
-  />
 
-  <Stack>
-    <CardBody>
-      <Heading size='md'>{data.category}</Heading>
-
-      <Text py='2'>
-        {/* Caffè latte is a coffee beverage of Italian origin made with espresso
-        and steamed milk.  */}
-        {data.name}
-      </Text>
-
-    </CardBody>
-
-    <CardFooter>
-      <Text>{data.price}</Text>
-      <Button variant='solid' colorScheme='blue'>
-        Buy Product
-      </Button>
-    </CardFooter>
-  </Stack>
-</Card>
-
-      {/* {data && <ProductCards image={data.image} name={data.name} price={data.price} category={data.category} shipping={data.shipping}  star={data.star} />
-      } */}
+      {data && <SingleProduct image={data.image} name={data.name} price={data.price} category={data.category} shipping={data.shipping}  star={data.star} />
+      }
       <Footer/>
     </div>
   )

@@ -22,10 +22,16 @@ import {
 import styles from "./Checkout.module.css";
 
 import { useDispatch, useSelector } from "react-redux";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const [value, setValue] = React.useState("Cash on delivery");
-
+  const {cart, isLoading} = useSelector((store)=>{return {
+    cart: store.CartReducer.cart,   
+    isLoading :  store.CartReducer.isLoading
+    }})
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [company, setCompany] = useState("");
@@ -38,6 +44,8 @@ const Checkout = () => {
   const [formData, setFormData] = useState([]);
   console.log(formData);
   const toast = useToast();
+    const navigate= useNavigate()
+
   const handleSubmit = () => {
     if (
       fname == "" ||
@@ -79,11 +87,13 @@ const Checkout = () => {
         duration: 9000,
         isClosable: true,
       });
+     navigate('/')
     }
   };
 
   return (
     <Box className={styles.body}>
+      <Navbar/>
       <Box p={"3rem"}>
         <Text textAlign={"start"}>Home » Checkout</Text>
       </Box>
@@ -257,7 +267,8 @@ const Checkout = () => {
                   borderColor="gray.300"
                 >
                   <Text>Product</Text>
-                  <Text>Subtotal</Text>
+                  
+                  {/* <Text>Subtotal</Text> */}
                 </Flex>
                 {/* <Box>
                   {Data.length > 0 &&
@@ -288,11 +299,12 @@ const Checkout = () => {
                   pb={".5rem"}
                 >
                   <Box as="b" fontSize="lg">
-                    Subtotal
+                  <Text>Total Cart Amount:₹ {cart.length>0? cart.reduce((ac,el,index)=>{
+            return el.price
+        },0)
+        : 0 }</Text>
                   </Box>
-                  <Box as="b" fontSize="lg">
-                    ₹
-                  </Box>
+                  
                 </Flex>
                 <Flex
                   borderBottom={"1px solid"}
@@ -309,12 +321,12 @@ const Checkout = () => {
                   </Box> */}
                 </Flex>
                 <Flex justifyContent={"space-between"} mb="30px">
-                  <Box as="b" fontSize="lg">
+                  {/* <Box as="b" fontSize="lg">
                     Total
-                  </Box>
-                  <Box as="b" fontSize="lg">
+                  </Box> */}
+                  {/* <Box as="b" fontSize="lg">
                     ₹
-                  </Box>
+                  </Box> */}
                 </Flex>
               </Box>
               <Box
@@ -387,6 +399,7 @@ const Checkout = () => {
                 </RadioGroup>
               </Box>
               <Box m={"1.5rem 0"}>
+
                 <Button
                   bgColor="#e40046"
                   color={"white"}
@@ -453,6 +466,7 @@ const Checkout = () => {
           </Box>
         </Grid>
       </Box>
+      <Footer/>
     </Box>
   );
 };
