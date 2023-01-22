@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import '../Curousel/HomeCarousel.css';
 // import imgGirl from './assets/images/defaultImage.jpg';
-import { dataDigitalBestSeller } from '../../data';
+import { dataDigitalBestSeller } from "../Curousel/data.js"
 
 function HomeCarousel() {
   const [defaultImage, setDefaultImage] = useState({});
