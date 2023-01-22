@@ -18,13 +18,15 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+// import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import register from "../Redux/SignupAuth/action";
 import {
   REGISTER_FAILURE,
   REGISTER_SUCCESS,
 } from "../Redux/SignupAuth/actionTypes";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 function reducer(state, action) {
   // console.log(action)
   // console.log(state)
@@ -96,6 +98,7 @@ const Signup = () => {
 
   return (
     <Box height="110vh" bg="#ffffff">
+      <Navbar/>
       <Divider orientation="horizontal" />
       <Box
         width="1150px"
@@ -188,7 +191,7 @@ const Signup = () => {
                         setShowPassword((showPassword) => !showPassword)
                       }
                     >
-                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                      {/* {showPassword ? <ViewIcon /> : <ViewOffIcon />} */}
                     </Button>
                   </InputRightElement>
                 </InputGroup>
@@ -219,6 +222,7 @@ const Signup = () => {
           </Button>
         </Box>
       </Box>
+      <Footer/>
     </Box>
   );
 };

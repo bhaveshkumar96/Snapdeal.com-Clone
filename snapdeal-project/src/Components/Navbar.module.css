@@ -182,9 +182,11 @@
   }
   
   .moreitems2:hover .signsub {
-    width: 129%;
+    width: 200px;
+    text-align: center;
+    /* width: auto; */
     position: absolute;
-    height: 400%;
+    height: 260px;
     margin-top: 21px;
     margin-left: -67px;
     display: block;

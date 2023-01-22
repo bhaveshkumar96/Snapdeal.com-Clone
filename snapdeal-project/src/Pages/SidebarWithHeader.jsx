@@ -1,4 +1,5 @@
 import React, { ReactNode } from 'react';
+import { Link as Send }  from 'react-router-dom';
 import {
   IconButton,
   Avatar,
@@ -91,7 +92,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       {...rest}>
         
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Image src='https://i.ibb.co/RD02FRm/final-logo-sastadeal.png'/>
+       <Send to={"/"}> <Image src='https://i.ibb.co/RD02FRm/final-logo-sastadeal.png'/></Send> 
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (

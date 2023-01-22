@@ -1,6 +1,9 @@
 import Carousel from "react-bootstrap/Carousel";
 import {HStack, Stack,Image, Text} from "@chakra-ui/react"
 import styles from "./Navbar.module.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 export const LandingPage = () => {
 
 
@@ -8,6 +11,7 @@ export const LandingPage = () => {
   return (
     <div>
       {/* <!-- ------mainbody------- --> */}
+      <Navbar/>
       <div className={styles.container}>
         <div className={styles.leftside}>
           <ul>
@@ -378,10 +382,18 @@ export const LandingPage = () => {
             </li>
             <div className={styles.moreli} style={{ cursor: "pointer" }}>
               <li>
-                <span>Men's Fashion</span>
+                <span>
+                  <Link to={"/product"}>
+                     Men's Fashion
+                  </Link>
+                  </span>
               </li>
               <li>
-                <span>Women's Fashion</span>
+                <span>
+                  <Link to={"/products"}>
+                  Women's Fashion
+                  </Link>           
+                  </span>
               </li>
               <li>
                 <span>Toys,kids Fashion & More</span>
@@ -538,6 +550,7 @@ export const LandingPage = () => {
                 <p>Price : 1212 Rs</p>
               </Stack>
             </HStack>
+
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>POPULAR PRODUCTS</h2>
             <HStack className={styles.trending}>
               <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
@@ -604,7 +617,7 @@ export const LandingPage = () => {
           alt=""
         />
       </div>
-      
+      <Footer/>
     </div>
   );
 };

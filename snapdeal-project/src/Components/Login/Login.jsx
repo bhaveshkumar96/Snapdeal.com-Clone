@@ -1,7 +1,7 @@
 
-import { useDispatch } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom"
-import { GoogleLogin } from "@leecheuk/react-google-login";
+// import { useDispatch } from "react-redux";
+// import { useLocation, useNavigate } from "react-router-dom"
+// import { GoogleLogin } from "@leecheuk/react-google-login";
 import React, { useState } from "react";
 import {
   Box,
@@ -22,6 +22,8 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import login from "../../Redux/LoginAuth/action";
 import { LOGIN_SUCCESS } from "../../Redux/LoginAuth/actionTypes";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 const Login = () => {
   const toast = useToast();
@@ -92,6 +94,7 @@ const Login = () => {
 
   return (
     <Box height="85vh" bg="#ffffff" padding="0px">
+      <Navbar/>
       <Divider orientation="horizontal" />
       <Box
         width="1150px"
@@ -154,13 +157,13 @@ const Login = () => {
             </Link>
           </Box>
           <Box>
-            <GoogleLogin
+            {/* <GoogleLogin
               clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
               buttonText="Login"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
               cookiePolicy={"single_host_origin"}
-            />
+            /> */}
           </Box>
           <Button
             borderRadius="0px"
@@ -181,6 +184,7 @@ const Login = () => {
           </Button>
         </Box>
       </Box>
+      <Footer/>
     </Box>
   );
 };

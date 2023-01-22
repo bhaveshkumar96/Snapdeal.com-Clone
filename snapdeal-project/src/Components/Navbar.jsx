@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styles from "./Navbar.module.css"
 export const Navbar = () => {
   return <div>
@@ -19,11 +20,13 @@ export const Navbar = () => {
 
       <nav className={styles.mainnav}>
         <div className={styles.logoimg}>
+          <Link to={"/"}>
           <img
           width={"50%"}
             src="https://i.ibb.co/RD02FRm/final-logo-sastadeal.png"
             alt=""
           />
+          </Link>
         </div>
         <div className={styles.search}>
           <input type="text" placeholder="Search products & brands" />
@@ -31,7 +34,7 @@ export const Navbar = () => {
         </div>
         <div  className={styles.moreitemslist}>
           <div  className={styles.moreitems1}>
-            <a href="">Cart <i class="fas fa-shopping-cart"></i></a>
+            <Link to={"/cart"}>Cart <i class="fas fa-shopping-cart"></i></Link>
           </div>
           <div className={styles.moreitems2}>
             <a href="" id="user_name"
@@ -49,9 +52,9 @@ export const Navbar = () => {
 
               <p>If you are a new user</p>
 
-              <a href="/"> <h3>Register</h3></a>
+              <Link to={"/sign-up"}> <h3>Register</h3></Link>
 
-              <a href="/" >Login</a>
+              <Link to={"/login"} >Login</Link>
             </div>
           </div>
         </div>

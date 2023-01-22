@@ -4,12 +4,14 @@ import ProductSidebar from '../Components/ProductSidebar'
 import styles from '../Styles/Products.module.css'
 import styled from 'styled-components'
 import SideBar from '../Components/BeutySideBar'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 const ProductPage = () => {
 
   return (
     <DivWrapper>
-      {/* <Navbar/> */}
+      <Navbar/>
       <div className={styles["products-filter-container"]}>
         <div className={styles["filter-component"]}>
             <ProductSidebar/>
@@ -19,6 +21,7 @@ const ProductPage = () => {
         <ProductList/>
         </div>       
       </div>
+      <Footer/>
       </DivWrapper>
   )
 }
