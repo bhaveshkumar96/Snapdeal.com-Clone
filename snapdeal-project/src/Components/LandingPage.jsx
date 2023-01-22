@@ -550,6 +550,7 @@ export const LandingPage = () => {
                 <p>Price : 1212 Rs</p>
               </Stack>
             </HStack>
+            
 
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>POPULAR PRODUCTS</h2>
             <HStack className={styles.trending}>
