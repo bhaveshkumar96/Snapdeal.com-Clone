@@ -17,7 +17,7 @@ function App() {
     {/* <EmptyCart/> */}
       {/* <Cart/> */}
        {/* <ActionItem/> */}
-    <ProductDetail/>
+    {/* <ProductDetail/> */}
     </div>
    
    // <DetailView/>
