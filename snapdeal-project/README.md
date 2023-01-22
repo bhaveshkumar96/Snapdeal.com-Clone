@@ -15,3 +15,7 @@ Area of Responsiblity
 3. Surya Prakash - Products page ( men's)
 4. Bhairavnath - Products page ( women's)
 5. Manish - Cart Page / Product detail page
+
+surya pre-requisite
+
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
