@@ -61,7 +61,7 @@ const ProductDetail = ({ product }) => {
                     </TableRow>
                     <ColumnText>
                         <TableCell style={{ color: '#878787' }}>Description</TableCell>
-                        <TableCell>{product.description}</TableCell>
+                        <TableCell></TableCell>
                     </ColumnText>
                 </TableBody>
             </Table>

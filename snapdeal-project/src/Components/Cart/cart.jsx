@@ -74,25 +74,26 @@ const Cart = () => {
 
     return (
         <>
-        { cartItems.length ? 
+        {/* { cartItems.length ?  */}
             <Component container>
                 <LeftComponent item lg={9} md={9} sm={12} xs={12}>
                     <Header>
                         <Typography style={{fontWeight: 600, fontSize: 18}}>My Cart ({cartItems?.length})</Typography>
                     </Header>
-                        {   cartItems.map(item => (
+                        {/* {   cartItems.map(item => (
                                 <CartItem item={item} removeItemFromCart={removeItemFromCart}/>
                             ))
-                        }
+                        } */}
                     <BottomWrapper>
                         <StyledButton onClick={() => buyNow()} variant="contained">Place Order</StyledButton>
                     </BottomWrapper>
                 </LeftComponent>
                 <Grid item lg={3} md={3} sm={12} xs={12}>
-                    <CartTotal cartItems={cartItems} />
+                    <CartTotal  />
                 </Grid>
-            </Component> : <EmptyCart />
-        }
+            </Component> 
+            {/* : <EmptyCart />
+        } */}
         </>
 
     )

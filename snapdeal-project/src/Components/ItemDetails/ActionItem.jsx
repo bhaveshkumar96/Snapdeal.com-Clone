@@ -48,7 +48,7 @@ const ActionItem = ({ product }) => {
 
     return (
         <LeftContainer>
-            <Image src={product.image} /><br />
+            <Image src="https://www.jiomart.com/images/product/600x750/rvdz24uigh/puma-men-s-maximal-comfort-sports-shoe_37902703-product-images-rvdz24uigh-0-202212021442.jpg" /><br />
             <StyledButton onClick={() => addItemToCart()} style={{marginRight: 10, background: '#3F3F3F'}} variant="contained"><Cart />Add to Cart</StyledButton>
             <StyledButton onClick={() => buyNow()} style={{background: '#E40046'}} variant="contained"><Flash /> Buy Now</StyledButton>
         </LeftContainer>

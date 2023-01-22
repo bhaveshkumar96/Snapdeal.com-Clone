@@ -43,20 +43,20 @@ const CartItem = ({ item, removeItemFromCart }) => {
     return (
         <Component>
             <LeftComponent>
-                <img src={item.image} style={{ height: 110, width: 110 }} />
+                {/* <img src={item.image} style={{ height: 110, width: 110 }} /> */}
                 <QuantityButton />
             </LeftComponent>
             <Box style={{ margin: 20 }}>
-                <Typography>{item.title}</Typography>
+                {/* <Typography>{.title}</Typography> */}
                 <SmallText>Seller:RetailNet
                     
                 </SmallText>
                 <Typography style={{margin: '20px 0'}}>
-                    <Cost component="span">₹{item.price.cost}</Cost>&nbsp;&nbsp;&nbsp;
-                    <MRP component="span"><strike>₹{item.price.mrp}</strike></MRP>&nbsp;&nbsp;&nbsp;
+                    <Cost component="span">₹price.cost</Cost>&nbsp;&nbsp;&nbsp;
+                    <MRP component="span"><strike>₹price.mrp</strike></MRP>&nbsp;&nbsp;&nbsp;
                    
                 </Typography>
-                <Remove onClick={() => removeItemFromCart(item.id)}>Remove</Remove>
+                <Remove >Remove</Remove>
             </Box>
         </Component>
     )

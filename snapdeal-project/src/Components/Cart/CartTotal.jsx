@@ -63,12 +63,12 @@ const CartTotal = ({ cartItems }) => {
                 <Heading>PRICE DETAILS</Heading>
             </Header>
             <Container>
-                <Typography>Price ({cartItems?.length} item)
-                    <Price component="span">₹{price}</Price>
+                <Typography>Price  item
+                    <Price component="span"></Price>
                 </Typography>
                
                 <TotalAmount>Total Amount
-                    <Price>₹{price}</Price>
+                    <Price>₹500</Price>
                 </TotalAmount>
                 
             </Container>

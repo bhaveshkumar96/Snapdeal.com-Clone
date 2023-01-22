@@ -47,26 +47,26 @@ const DetailView = () => {
       
         <Component>
            <h3>Single Product Page</h3>
-            { product && Object.keys(product).length &&
+            {/* { product && Object.keys(product).length && */}
                 <Container > 
                     <Grid item lg={4} md={4} sm={8} xs={12}>
-                        <ActionItem product={product} />
+                        <ActionItem  />
                     </Grid>
                     <RightContainer item lg={8} md={8} sm={8} xs={12}>
-                        <Typography>{product.name}</Typography>
+                        <Typography></Typography>
                         <Typography style={{marginTop: 5, color: '#878787', fontSize: 14 }}>
                             8 Ratings & 1 Reviews
                           
                         </Typography>
                         <Typography>
-                            <span style={{ fontSize: 28 }}>₹{product.price.cost}</span>&nbsp;&nbsp;&nbsp; 
-                            <span style={{ color: '#878787' }}><strike>₹{product.price.mrp}</strike></span>&nbsp;&nbsp;&nbsp;
-                            <span style={{ color: '#388E3C' }}>{product.price.discount} off</span>
+                            <span style={{ fontSize: 28 }}>₹price.cost</span>&nbsp;&nbsp;&nbsp; 
+                            <span style={{ color: '#878787' }}><strike>₹mrp</strike></span>&nbsp;&nbsp;&nbsp;
+                            <span style={{ color: '#388E3C' }}>discount off</span>
                         </Typography>
-                        <ProductDetail product={product} />
+                        <ProductDetail />
                     </RightContainer>
                 </Container>
-            }   
+              
         </Component>
     )
 }

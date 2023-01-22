@@ -13,7 +13,7 @@ const Container = styled(Box)`
 `;
 
 const Image = styled('img')({
-    width: '15%'
+    width: '25%'
 });
 
 
