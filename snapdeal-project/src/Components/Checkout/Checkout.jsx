@@ -77,6 +77,7 @@ const Checkout = () => {
         country: "India",
         state: "Maharashtra",
       };
+      
       setFormData(billingData);
       toast({
         size: "500",
