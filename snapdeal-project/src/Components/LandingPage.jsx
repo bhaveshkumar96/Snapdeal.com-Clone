@@ -392,7 +392,7 @@ export const LandingPage = () => {
               <li>
                 <span>
                   <Link to={"/products"}>
-                     Beauty Products
+                  Beauty,Health & Daily Needs
                   </Link>           
                   </span>
               </li>
@@ -510,16 +510,18 @@ export const LandingPage = () => {
           {/* <!-- ---cardslider-- --> */}
           <div className={styles.Container}>
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>RECENTLY VIEWED PRODUCTS</h2>
+            <Link to={'/product'}>
             <HomeCarousel/>
+            </Link>
             <HStack className={styles.trending}>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/j/x/9/large/Vighnraj-Jewels-Circular-Blue-Colored-SDL992834142-1-29260.webp" alt="221" w={"100%"}/>
                 <Text>
                 Vighnraj Jewels Circular Blue Colored 
                 </Text>
-                <p>Price : 1500 Rs</p>
-                
+                <p>Price : 1500 Rs</p>               
               </Stack>
+              
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/f/4/5/large/Scotlon-Krishna-with-Cute-Calf-SDL923415679-3-06886.webp" alt="221" w={"100%"}/>
                 <Text>

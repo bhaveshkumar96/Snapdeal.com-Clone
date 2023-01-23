@@ -24,15 +24,16 @@ const AddCart = () => {
     <div>
         <Navbar/>
       <div styles={{width:'100%', margin:'auto'}}>
-        <HStack>
-        <Text>Total Cart Items: {cart.length>0? cart.length:0}</Text>{' '}{' '}
-        <Text>Total Cart Amount: {cart.length>0? cart.reduce((ac,el,index)=>{
-            return el.price
+        <HStack p={4}>
+        <Text color='blue.600' fontSize='3xl' bg={'yellow.200'} >Total Cart Items: {cart.length>0? cart.length:0}</Text>{' '}{' '}
+        <Text color='blue.600' fontSize='3xl' bg={'yellow.200'} >Total Cart Amount: {cart.length>0? cart.reduce((acc,el)=>{
+            return acc+ el.price
         },0)
-        : 0 }</Text></HStack>
+        : 0 }
+        </Text>
+        </HStack>
         <Link to={'/checkout'}>
-            <br />
-        <Button>Move to Checkout</Button></Link>
+        <Button variant='solid' marginLeft={'20px'} colorScheme='blue'>Move to Checkout</Button></Link>
         <br/>
       <Box className={styles.cartItem} >
         {isLoading && <Loader/>}

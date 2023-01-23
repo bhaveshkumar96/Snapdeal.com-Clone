@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from "react";
-// import data from "../../db.json"
 import { useDispatch } from "react-redux";
 import {
   Box,
