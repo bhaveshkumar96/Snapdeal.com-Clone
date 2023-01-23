@@ -16,7 +16,11 @@ Area of Responsiblity
 4. Bhairavnath - Products page / Admin page (Beauty)
 5. Manish - Add to Cart Page 
 --------------------------------------------------------Some Screenshots------------------------------------------------------------------------------------------------
+
+
+![localhost_3000_](https://user-images.githubusercontent.com/110034571/213993330-dad487e3-2b1b-42e4-867a-8e422ecfb836.png)
 #Navbar
+
 ![navbar sastadeal](https://user-images.githubusercontent.com/110034571/213982898-a77adae8-f1c2-4c42-b028-b02cfc4825ae.png)
 #Home change
 ![category hover effect](https://user-images.githubusercontent.com/110034571/213982982-04967a9e-ea34-44a7-878e-552a17387d00.png)
