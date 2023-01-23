@@ -27,7 +27,7 @@ const AddCart = () => {
         <HStack p={4}>
         <Text color='blue.600' fontSize='3xl' bg={'yellow.200'} >Total Cart Items: {cart.length>0? cart.length:0}</Text>{' '}{' '}
         <Text color='blue.600' fontSize='3xl' bg={'yellow.200'} >Total Cart Amount: {cart.length>0? cart.reduce((acc,el)=>{
-            return acc+ el.price
+            return acc+ +(el.price)
         },0)
         : 0 }
         </Text>
