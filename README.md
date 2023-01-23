@@ -16,22 +16,9 @@ Area of Responsiblity
 4. Bhairavnath - Products page / Admin page (Beauty)
 5. Manish - Add to Cart Page 
 --------------------------------------------------------Some Screenshots------------------------------------------------------------------------------------------------
-
-
 ![localhost_3000_](https://user-images.githubusercontent.com/110034571/213993330-dad487e3-2b1b-42e4-867a-8e422ecfb836.png)
-#Navbar
 
-![navbar sastadeal](https://user-images.githubusercontent.com/110034571/213982898-a77adae8-f1c2-4c42-b028-b02cfc4825ae.png)
-#Home change
-![category hover effect](https://user-images.githubusercontent.com/110034571/213982982-04967a9e-ea34-44a7-878e-552a17387d00.png)
 
-![sasta deal popular products](https://user-images.githubusercontent.com/110034571/213983316-56bacc4f-ef4f-495e-a81e-de9afad56fa4.png)
-
-![sasta deal popular products](https://user-images.githubusercontent.com/110034571/213983424-afde4679-fd1e-4de0-8c7b-c45fe17276a1.png)
-
-![sasta deal footer bottom](https://user-images.githubusercontent.com/110034571/213983437-1dbc610b-3532-45bc-abc5-602cdc54ac34.png)
-
-#Product page
 ![sasta deal mens](https://user-images.githubusercontent.com/110034571/213983507-f1bb95bf-d1ed-4da8-b24b-7045833be501.png)
 
 ![sastadeal product pegination](https://user-images.githubusercontent.com/110034571/213983546-020a95b0-3c44-4398-bd91-2a80b60ea4e7.png)
