@@ -28,10 +28,10 @@ const ProductList = () => {
     
 
     useEffect(()=>{
-        const order = searchParams.get("order")      // string return
+        const order = searchParams.get("order")      
         let paramObj = {
           params: {
-            category: searchParams.getAll("category"),   //return all in array form
+            category: searchParams.getAll("category"),   
             _sort: "price" ,                        
             _order: order,
           },
@@ -43,7 +43,6 @@ const ProductList = () => {
      
     return (       
       <div style={{margin:"auto", width:"100%"}}>
-
       <Box className={styles.container} >
         {isLoading && <Loader/>}
         {product.length>0 && product.map((el)=>{
@@ -52,9 +51,7 @@ const ProductList = () => {
       </Box>
         <div style={{display:'grid', justifyContent:'center'}} className={styles.container} >
           <Pagination pageFilter={pageFilter} setPageFilter={setPageFilter} />
-        </div>
-        
-      
+        </div>      
       </div>
     )
 }

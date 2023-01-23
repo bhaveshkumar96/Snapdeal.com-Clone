@@ -30,7 +30,7 @@ function Rating({ rating }) {       //rating = star
               <BsStarFill
                 key={i}
                 style={{ marginLeft: '1' }}
-                color={i < rating ? 'yellow.500' : 'grey.300'}
+                color={i < rating ? 'yellow.500' : 'yellow.500'}
                 // color={'yellow.500'}
               />
             );
@@ -48,7 +48,6 @@ function Rating({ rating }) {       //rating = star
   );
 }
 function ProductCards({ id, name, image, price, category, shipping, star }) {
-
   // console.log("data is :", name )  
   const dispatch = useDispatch()
   const toast = useToast()
@@ -126,7 +125,7 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
               color={'gray.800'}
               fontSize={'1.2em'}>
               {/* <chakra.a href={''} > */}
-                <Icon as={FiShoppingCart} h={5} w={8} alignSelf={'center'} onClick={handdleCart} />
+                <Icon as={FiShoppingCart} h={5} w={8} alignSelf={'center'} onClick={()=>handdleCart()} />
                 {/* <Icon as={FiShoppingCart} height={'20px'} width={'20px'} alignSelf={'center'} /> */}
               {/* </chakra.a> */}
             </Tooltip>
@@ -147,7 +146,6 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
         </Box>
       </Box>
     </Flex>
-
   );
 }
 

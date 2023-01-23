@@ -299,8 +299,8 @@ const Checkout = () => {
                   pb={".5rem"}
                 >
                   <Box as="b" fontSize="lg">
-                  <Text>Total Cart Amount:₹ {cart.length>0? cart.reduce((ac,el,index)=>{
-            return el.price
+                  <Text>Total Cart Amount:₹ {cart.length>0? cart.reduce((acc,el,index)=>{
+            return acc +el.price
         },0)
         : 0 }</Text>
                   </Box>

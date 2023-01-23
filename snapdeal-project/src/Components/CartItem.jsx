@@ -11,12 +11,11 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
     const handleDelete=(id)=>{
         dispatch(deleteCartItem(id)).then(()=>dispatch(getCartItem()))
     }
-    console.log("name dsfjd",name)
+    console.log("name is:",name)
     
   return (
-    <div  >
-      <Card height={'450px'}>
-  <CardBody>
+      <Card margin={'auto'} boxShadow={'2xl'} >  
+  <CardBody width={'250px'} >
     <Image className={styles.imag}
       src={image}
       alt={name}
@@ -49,7 +48,6 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
     </ButtonGroup>
   </CardFooter>
 </Card>
-    </div>
   )
 }
 
