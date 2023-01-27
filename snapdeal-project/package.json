@@ -33,6 +33,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "thunk": "^0.0.1",
+    "use-throttle": "^0.0.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

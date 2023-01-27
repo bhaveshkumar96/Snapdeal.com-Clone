@@ -3,6 +3,13 @@ import { useSearchParams } from 'react-router-dom'
 import { Box, Heading } from '@chakra-ui/react'
 import { BsJustifyLeft } from 'react-icons/bs'
 import styles from '../Styles/Products.module.css'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from '@chakra-ui/react'
 
 const SideBar = () => {
   const [searchParams, setSearchparams] = useSearchParams()
@@ -40,10 +47,18 @@ const SideBar = () => {
         Beauty Products
       </Heading>
 
-      <div style={{ fontSize: '15px', color: '#abc72c' }}>
-        <Heading as='h5' size='sm' color={"teal"} paddingTop='10px'>-Category</Heading>
-
-        <div >
+      <Accordion allowToggle>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box as="span" flex='1' textAlign='left'>
+                Category
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+          <div >
           <div className={styles.filtertitle}>
             <input type="checkbox" value="hair" onChange={handleFilter}
               checked={category.includes("hair")} />
@@ -65,12 +80,20 @@ const SideBar = () => {
             <label>Fragrance</label>
           </div>
         </div>
-        <br />
-        <br />
+          </AccordionPanel>
+        </AccordionItem>
 
-        <Heading as='h5' size='sm' color={"teal"}
-          className={styles.filterHeading}>-Sort By Price</Heading>
-        <div onChange={handleSort} style={{ fontSize: '15px', color: '#abc72c' }}>
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box as="span" flex='1' textAlign='left'>
+                Sort By Price
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+          <div onChange={handleSort} style={{ fontSize: '15px', color: '#abc72c' }}>
           <div className={styles.filtertitle}>
             <input type="radio" name="sort_by" value={"asc"} defaultChecked={order === "asc"} />
             <label>Low To High</label>
@@ -80,9 +103,20 @@ const SideBar = () => {
             <label>High To Low</label>
           </div>
         </div>
-        <br /><br />
-        <Heading as='h5' size='sm' color={"teal"} className={styles.filterHeading} >-Sort By Title</Heading>
-        <div onChange={handleSort} style={{ fontSize: '15px', color: '#abc72c' }}>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem>
+          <h2>
+            <AccordionButton>
+              <Box as="span" flex='1' textAlign='left'>
+                Sort By Title
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+          <div onChange={handleSort} style={{ fontSize: '15px', color: '#abc72c' }}>
           <div className={styles.filtertitle}>
             <input type="radio" name="sort" value={"asc"} defaultChecked={order === "asc"} />
             <label>A to Z</label>
@@ -92,8 +126,9 @@ const SideBar = () => {
             <label> Z to A</label>
           </div>
         </div>
-        <br /><br /><br />
-      </div>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
     </div>
   )
 }

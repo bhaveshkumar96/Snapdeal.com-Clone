@@ -392,7 +392,7 @@ export const LandingPage = () => {
               <li>
                 <span>
                   <Link to={"/products"}>
-                  Beauty,Health & Daily Needs
+                  Beauty Products
                   </Link>           
                   </span>
               </li>

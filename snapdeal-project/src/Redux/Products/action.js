@@ -22,10 +22,10 @@ export const  postProductsSuccess=(payload)=>{
     return {type: POST_PRODUCTS_SUCCESS, payload}
 }
 
-export const getData =(param,limit,page)=>(dispatch)=>{
+export const getData =(param,limit,page,query)=>(dispatch)=>{
     console.log(limit);
     dispatch(getProductsRequest())
-    axios.get(`https://snapdeal-productapi.onrender.com/mens?_page=${page}&_limit=${limit}`, param)
+    axios.get(`https://snapdeal-productapi.onrender.com/mens?_page=${page}&_limit=${limit}&q=${query}`, param)
     .then((res)=> {
         
         dispatch(getProductsSuccess(res.data))
@@ -34,9 +34,9 @@ export const getData =(param,limit,page)=>(dispatch)=>{
     .catch((err)=> dispatch(getProductsFailure()))
 }
 
-export const getProducts = (param={} ,limit,page)=>(dispatch) =>{
+export const getProducts = (param={} ,limit,page,query)=>(dispatch) =>{
     dispatch(getProductsRequest())
-   axios.get("https://snapdeal-productapi.onrender.com/beauty?_page=${page}&_limit=${limit}",param).then((res)=>{
+   axios.get(`https://snapdeal-productapi.onrender.com/beauty?_page=${page}&_limit=${limit}&q=${query}`,param).then((res)=>{
         console.log(res)
          dispatch(getProductsSuccess(res.data))
     }).catch((err)=> dispatch(getProductsFailure()))
