@@ -25,7 +25,7 @@ Area of Responsiblity
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="html5" />
 </p>
 --------------------------------------------------------Some Screenshots-----------------------------------------------------------------------------------------------
-![localhost_3000_](https://user-images.githubusercontent.com/110034571/213993330-dad487e3-2b1b-42e4-867a-8e422ecfb836.png)
+<img src="https://user-images.githubusercontent.com/110034571/213994555-8642d52e-3e68-47cf-a216-61e0972da168.png" alt="HomePage
 Product Page
 ![snapdeal-project vercel app_product (1)](https://user-images.githubusercontent.com/110034571/213994555-8642d52e-3e68-47cf-a216-61e0972da168.png)
 #login signup
