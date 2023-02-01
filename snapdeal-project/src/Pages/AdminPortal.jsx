@@ -19,6 +19,8 @@ import {
 import styles from "./AdminPortal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import SidebarWithHeader from "./SidebarWithHeader";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 export const AdminPortal = () => {
   const adminData = useSelector((store) => store.AdminReducer.adminData);
   const dispatch = useDispatch();
@@ -150,8 +152,7 @@ export const AdminPortal = () => {
           </Table>
         </TableContainer>
       </div>
-      {/* 
-      <Footer /> */}
+       <Footer />
     </>
   );
 };

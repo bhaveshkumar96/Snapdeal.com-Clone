@@ -182,7 +182,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                 <Avatar
                   size={'sm'}
                   src={
-                    'https://avatars.githubusercontent.com/u/110034571?v=4'
+                    'https://avatars.githubusercontent.com/u/105972503?v=4'
                   }
                 />
                 <VStack
@@ -190,7 +190,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Bhavesh Kumar</Text>
+                  <Text fontSize="sm">Bhairavnath Gotam</Text>
                   <Text fontSize="xs" color="gray.600">
                     Admin
                   </Text>

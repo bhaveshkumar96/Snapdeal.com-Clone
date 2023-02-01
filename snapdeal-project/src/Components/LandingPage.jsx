@@ -1,10 +1,12 @@
 import Carousel from "react-bootstrap/Carousel";
-import {HStack, Stack,Image, Text} from "@chakra-ui/react"
+import {HStack, Stack,Image, Text, Heading} from "@chakra-ui/react"
 import styles from "./Navbar.module.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import HomeCarousel from "./Curousel/HomeCarousel";
+import HomeCarousel1 from "./Curousel/HomeCarousel1";
+import HomeCarousel2 from "./Curousel/HomeCarousel2";
 export const LandingPage = () => {
 
 
@@ -555,7 +557,7 @@ export const LandingPage = () => {
               </Stack>
             </HStack> */}
             <Link to={'/product'}>
-            <HomeCarousel/>
+            <HomeCarousel1/>
             </Link>
 
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>POPULAR PRODUCTS</h2>
@@ -602,7 +604,7 @@ export const LandingPage = () => {
               </Stack>
             </HStack> */}
             <Link to={'/product'}>
-            <HomeCarousel/>
+            <HomeCarousel2/>
             </Link>
 
           </div>

@@ -1,6 +1,14 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import styled from "styled-components"
 import styles from "./Navbar.module.css"
 export const Navbar = () => {
+  const [input, setInput] = useState("")
+
+  const handleInputChange =(e)=>{
+    setInput(e.target.value)
+  }
+  // console.log(input)
   return <div>
       <div>
       <nav className={styles.topnav}>
@@ -29,8 +37,11 @@ export const Navbar = () => {
           </Link>
         </div>
         <div className={styles.search}>
-          <input type="text" placeholder="Search products & brands" />
+          <input type="text" value={input} onChange={handleInputChange} placeholder="Search products & brands" />
           <button ><i class="fas fa-search"></i> Search</button>
+          <SuggestionBox>
+            
+          </SuggestionBox>
         </div>
         <div  className={styles.moreitemslist}>
           <div  className={styles.moreitems1}>
@@ -68,3 +79,7 @@ export const Navbar = () => {
 }
 
 export default Navbar
+
+const SuggestionBox =  styled.div`
+   border:1px solid black;
+`
