@@ -208,7 +208,7 @@
     grid-area: l;
     background-color: white;
     margin: 0 24px 0 42px;
-    height: 126vh;
+    height: auto;
   }
   
   .topCat {
@@ -597,7 +597,7 @@
   /* ----download snap--- */
   
   .downloadsnap {
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
     background-color: white;
     display: flex;
@@ -637,7 +637,7 @@
   
   /* ------secure-- */
   
-  .secure {
+  /* .secure {
     display: grid;
     margin-top: 40px;
     width: 100%;
@@ -645,7 +645,39 @@
     height: 200px;
     border-top: 1px solid #e2e2e2;
     border-bottom: 1px solid #e2e2e2;
+  } */
+  @media all and (min-width: 651px) and (max-width: 900px) {
+    body{
+      margin: auto;
+    }
+    .Container{
+      margin: auto;
+    }
+    .footCard {
+        text-align: left;
+        display: grid;
+      }
+      .container{
+        margin: auto;
+      }
+      .leftside{
+        display: none;
+      }.barcode{
+        display: none;
+      }
+     .topnav{
+      display: none;
+     }
+     .mainnav{
+      display: none;
+     }
+      
   }
+  /* @media all and (min-width:450 ) and (max-width: 651px) {
+      .leftside{
+        display: none;
+      }
+  } */
   .cardsitems {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -679,15 +711,13 @@
   .footer1 {
     width: 100%;
     background-color: white;
-    height: 40vh;
+    height: auto;
   }
-  
-  .footCard {
+  /* .footCard {
     text-align: left;
-    line-height: 1;
     display: flex;
-    justify-content: center;
-  }
+    justify-content:left;  
+  } */
   .footitems {
     margin: 40px 10px 0 30px;
   }
