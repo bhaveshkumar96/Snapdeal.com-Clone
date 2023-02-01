@@ -1,9 +1,10 @@
-import { HStack } from "@chakra-ui/react";
+import { HStack,Box } from "@chakra-ui/react";
+import { resolvePath } from "react-router-dom";
 import styles from "./Navbar.module.css";
 export const Footer = () => {
   return (
     <div>
-        <div className={styles.secure}>
+        {/* <div className={styles.secure}  display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",sm:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(6,1fr)"}} gap={3} margin={'auto'}>
         <div className={styles.cardsitems}>
           <div className={styles.cards}>
             <img
@@ -42,9 +43,9 @@ export const Footer = () => {
             <p>app only offers at your fingertips</p>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.footer1}>
-        <div className={styles.footCard}>
+        <Box className={styles.footCard}  display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",sm:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(6,1fr)"}} gap={3} margin={'auto'} >
           <div className={styles.footitems}>
             <h3>Policy Info</h3>
             <p>Privacy Policy</p>
@@ -89,10 +90,10 @@ export const Footer = () => {
             <p>Register now to get updates on promotions and coupons</p>
             <span> Or Download App</span>
           </div>
-        </div>
+        </Box>
       </div>
       {/* <!-- ------payments---- --> */}
-      <div className={styles.payments}>
+      <div className={styles.payments} display={'grid'} gridTemplateColumns={{base:"repeat(2,1fr)",sm:"repeat(2,1fr)",md:"repeat(3,1fr)",lg:"repeat(6,1fr)"}} gap={3} margin={'auto'}>
         <div className={styles.pay}>
           <h2>PAYMENTS</h2>
           <div className={styles.icons}>
