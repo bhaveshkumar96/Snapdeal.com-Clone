@@ -14,7 +14,7 @@ export const LandingPage = () => {
       {/* <!-- ------mainbody------- --> */}
       <Navbar/>
       <div className={styles.container}>
-        <div className={styles.leftside}>
+        <div className={styles.leftside}   >
           <ul>
             <div class="topCat">TOP CATEGORIES</div>
             <li className={styles.list1}>
@@ -392,7 +392,7 @@ export const LandingPage = () => {
               <li>
                 <span>
                   <Link to={"/products"}>
-                  Beauty Products
+                  Beauty and Health
                   </Link>           
                   </span>
               </li>
@@ -513,7 +513,7 @@ export const LandingPage = () => {
             <Link to={'/product'}>
             <HomeCarousel/>
             </Link>
-            <HStack className={styles.trending}>
+            {/* <HStack className={styles.trending}>
               <Stack h={"370px"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://n1h2.sdlcdn.com/imgs/j/x/9/large/Vighnraj-Jewels-Circular-Blue-Colored-SDL992834142-1-29260.webp" alt="221" w={"100%"}/>
                 <Text>
@@ -553,10 +553,13 @@ export const LandingPage = () => {
                 </Text>
                 <p>Price : 1212 Rs</p>
               </Stack>
-            </HStack>
+            </HStack> */}
+            <Link to={'/product'}>
+            <HomeCarousel/>
+            </Link>
 
             <h2 style={{letterSpacing:"2px",marginTop:"25px",border:"1px solid gray",padding:"5px"}}>POPULAR PRODUCTS</h2>
-            <HStack className={styles.trending}>
+            {/* <HStack className={styles.trending} flexWrap={true}>
               <Stack h={"fit-content"}  w={"20%"} className={styles.trenditems} lineHeight="1">
                 <Image src="https://images.pexels.com/photos/1381553/pexels-photo-1381553.jpeg?auto=compress&cs=tinysrgb&w=600" alt="221" w={"100%"}/>
                 <Text>
@@ -597,7 +600,11 @@ export const LandingPage = () => {
                 <p>Price : 1212 Rs</p>
              
               </Stack>
-            </HStack>
+            </HStack> */}
+            <Link to={'/product'}>
+            <HomeCarousel/>
+            </Link>
+
           </div>
         
           
