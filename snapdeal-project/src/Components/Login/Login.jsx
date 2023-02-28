@@ -1,7 +1,4 @@
 
-// import { useDispatch } from "react-redux";
-// import { useLocation, useNavigate } from "react-router-dom"
-// import { GoogleLogin } from "@leecheuk/react-google-login";
 import React, { useState } from "react";
 import {
   Box,
@@ -125,6 +122,7 @@ const Login = () => {
               <FormControl>
                 <FormLabel fontWeight="hairline">Email address *</FormLabel>
                 <Input
+                isRequired={true}
                   focusBorderColor="black"
                   errorBorderColor="red.300"
                   type="email"
@@ -139,6 +137,7 @@ const Login = () => {
               <FormControl>
                 <FormLabel fontWeight="hairline">Password *</FormLabel>
                 <Input
+                isRequired={true}
                   focusBorderColor="black"
                   errorBorderColor="red.300"
                   type="password"
@@ -157,13 +156,7 @@ const Login = () => {
             </Link>
           </Box>
           <Box>
-            {/* <GoogleLogin
-              clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-              buttonText="Login"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              cookiePolicy={"single_host_origin"}
-            /> */}
+
           </Box>
           <Button
             borderRadius="0px"
