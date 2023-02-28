@@ -200,7 +200,7 @@ const Signup = () => {
           <Box paddingTop="26px">
             Already a user?{" "}
             <Link color="teal.500" href="sign-in">
-              Sign Up
+              Sign in
             </Link>
           </Box>
           <Button
