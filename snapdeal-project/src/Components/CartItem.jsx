@@ -11,19 +11,18 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
     const handleDelete=(id)=>{
         dispatch(deleteCartItem(id)).then(()=>dispatch(getCartItem()))
     }
-    console.log("name is:",name)
     
   return (
-      <Card margin={'auto'} boxShadow={'2xl'} >  
-  <CardBody width={'250px'} >
+      <Card margin={'15px'}  spacing={8} gap={'20px'} >  
+  <CardBody boxSize={'300px'} >
     <Image className={styles.imag}
       src={image}
       alt={name}
       borderRadius='lg'
     />
-    <Stack mt='6' spacing='3'>
-      <Heading size='md'>{name}</Heading>
-      <Text>
+    <Stack mt='2' spacing='3'>
+      <Heading size='md' overflow='hidden'  noOfLines={1}>{name}</Heading>
+      <Text fontSize='1xl'fontWeight={'medium'}>
        {category} <br />
        {shipping}
       </Text>
@@ -33,8 +32,8 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
     </Stack>
   </CardBody>
   <Divider />
-  <CardFooter>
-    <ButtonGroup spacing='2'>
+  {/* <CardFooter> */}
+    <ButtonGroup spacing='2' paddingBottom={'5px'}>
         <Button variant='ghost' colorScheme='blue' onClick={()=>handleDelete(id)}>
         Delete
       </Button>
@@ -42,11 +41,9 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
       <Button variant='solid' colorScheme='blue'>
         Buy now
       </Button>
-      </Link>
-      
-      
+      </Link>  
     </ButtonGroup>
-  </CardFooter>
+  {/* </CardFooter> */}
 </Card>
   )
 }

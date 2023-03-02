@@ -14,11 +14,12 @@ import {
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
-import { postData } from '../Redux/Products/action';
+import { getData, getDatabhaii, postData } from '../Redux/Products/action';
 import { Link } from 'react-router-dom'
 import styles from '../Styles/Products.module.css'
+import { useEffect } from 'react';
 
-function Rating({ rating }) {       //rating = star
+function Rating({ rating }) {      
   return (
     <Box display="flex" alignItems="center">
       {Array(5)
@@ -48,15 +49,16 @@ function Rating({ rating }) {       //rating = star
   );
 }
 function ProductCards({ id, name, image, price, category, shipping, star }) {
-  // console.log("data is :", name )  
+   
   const dispatch = useDispatch()
   const toast = useToast()
   const handdleCart = () => {
-    // console.log("clicked yaa");
+    
     const data = {
       name, image, price, category, shipping, star
     }
-    dispatch(postData(data))
+    dispatch(postData(data)).then(()=>getDatabhaii() )
+    
     toast({
       title: 'Added ',
       description: "Congratulations, Added to Cart",
@@ -67,7 +69,7 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
   }
 
   return (
-    <Flex p={6}  alignItems="center" justifyContent="center"
+    <Flex p={5}  alignItems="center" justifyContent="center"
       zIndex={1.1}
       _hover={{ transform: 'scale(1.05)', }}
     >
@@ -75,11 +77,11 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
         bg={useColorModeValue('white', 'gray.800')}
         // maxW="sm"
         width='230px'
+        height="320px"
         borderWidth="1px"
         rounded="lg"
         shadow="lg"
         position="relative">
-        {/* {data.isNew && ( */}
         {{ category } && (
           <Circle
             size="10px"
@@ -117,7 +119,7 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
               isTruncated>
               {name}
             </Box>
-            <Tooltip
+            {/* <Tooltip
               size={'50px'}
               label="Add to cart"
               bg="white"
@@ -125,10 +127,10 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
               color={'gray.800'}
               fontSize={'1.2em'}>
               {/* <chakra.a href={''} > */}
-                <Icon as={FiShoppingCart} h={5} w={8} alignSelf={'center'} onClick={()=>handdleCart()} />
+                {/* <Icon as={FiShoppingCart} h={5} w={8} alignSelf={'center'}  /> */}
                 {/* <Icon as={FiShoppingCart} height={'20px'} width={'20px'} alignSelf={'center'} /> */}
               {/* </chakra.a> */}
-            </Tooltip>
+            {/* </Tooltip> */} 
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center">

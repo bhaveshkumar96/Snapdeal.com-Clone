@@ -117,6 +117,7 @@ const Checkout = () => {
                   <FormControl isRequired>
                     <FormLabel>First name</FormLabel>
                     <Input
+                    isRequired={true}
                       borderRadius={"none"}
                       size="lg"
                       value={fname}
@@ -126,6 +127,7 @@ const Checkout = () => {
                   <FormControl isRequired>
                     <FormLabel>Last name</FormLabel>
                     <Input
+                    isRequired={true}
                       borderRadius={"none"}
                       size="lg"
                       value={lname}
@@ -138,6 +140,7 @@ const Checkout = () => {
                 <FormControl>
                   <FormLabel>Company name (optional)</FormLabel>
                   <Input
+                  isRequired={true}
                     borderRadius={"none"}
                     size="lg"
                     value={company}
@@ -150,6 +153,7 @@ const Checkout = () => {
                   <FormLabel>Country / Region</FormLabel>
 
                   <Input
+                  isRequired={true}
                     size="lg"
                     borderRadius={"none"}
                     defaultValue={"India"}
@@ -160,6 +164,7 @@ const Checkout = () => {
                 <FormControl isRequired>
                   <FormLabel>Street address</FormLabel>
                   <Input
+                  isRequired={true}
                     size="lg"
                     placeholder="House number and street name"
                     borderRadius={"none"}
@@ -178,6 +183,7 @@ const Checkout = () => {
                 <FormControl isRequired>
                   <FormLabel>Town / City </FormLabel>
                   <Input
+                  isRequired={true}
                     borderRadius={"none"}
                     size="lg"
                     value={city}
@@ -190,6 +196,7 @@ const Checkout = () => {
                   <FormLabel>State</FormLabel>
 
                   <Input
+                  isRequired={true}
                     borderRadius={"none"}
                     size="lg"
                     defaultValue={"Maharashtra"}
@@ -200,6 +207,7 @@ const Checkout = () => {
                 <FormControl isRequired>
                   <FormLabel>PIN Code</FormLabel>
                   <Input
+                  isRequired={true}
                     borderRadius={"none"}
                     size="lg"
                     value={pinCode}
@@ -212,6 +220,7 @@ const Checkout = () => {
                 <FormControl isRequired>
                   <FormLabel>Phone</FormLabel>
                   <Input
+                  isRequired={true}
                     borderRadius={"none"}
                     size="lg"
                     type={"number"}
@@ -271,26 +280,6 @@ const Checkout = () => {
                   
                   {/* <Text>Subtotal</Text> */}
                 </Flex>
-                {/* <Box>
-                  {Data.length > 0 &&
-                    Data.map((item) => (
-                      <Box p="1rem 0" key={item.id} textAlign="start">
-                        <Flex
-                          justifyContent={"space-between"}
-                          alignItems="center"
-                          gap={"1rem"}
-                        >
-                          <Box width={"80%"}>
-                            <Box mb={".5rem"}>
-                              {item.title} x {item.quantity}
-                            </Box>
-                            <Box>Size: {item.size}</Box>
-                          </Box>
-                          <Box width={"20%"}>₹{item.price}</Box>
-                        </Flex>
-                      </Box>
-                    ))}
-                </Box> */}
 
                 <Flex
                   borderBottom={"1px solid"}
@@ -314,20 +303,8 @@ const Checkout = () => {
                   mb=".5rem"
                   pb={".5rem"}
                 >
-                  {/* <Box as="b" fontSize="lg">
-                    DISCOUNT (10% Apply)
-                  </Box> */}
-                  {/* <Box as="b" fontSize="lg">
-                    -₹
-                  </Box> */}
                 </Flex>
                 <Flex justifyContent={"space-between"} mb="30px">
-                  {/* <Box as="b" fontSize="lg">
-                    Total
-                  </Box> */}
-                  {/* <Box as="b" fontSize="lg">
-                    ₹
-                  </Box> */}
                 </Flex>
               </Box>
               <Box
@@ -409,15 +386,6 @@ const Checkout = () => {
                   borderRadius={"none"}
                   _hover="none"
                   onClick={() => {
-                    // toast({
-                    //   size: "500",
-                    //   position: "top-center",
-                    //   title: "Order Placed.",
-                    //   description: "Thank you for shopping with us.",
-                    //   status: "success",
-                    //   duration: 9000,
-                    //   isClosable: true,
-                    // });
                     handleSubmit();
                   }}
                 >

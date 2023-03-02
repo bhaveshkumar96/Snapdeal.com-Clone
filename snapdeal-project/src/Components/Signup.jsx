@@ -17,7 +17,6 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
-// import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
 import register from "../Redux/SignupAuth/action";
 import {
@@ -27,8 +26,6 @@ import {
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 function reducer(state, action) {
-  // console.log(action)
-  // console.log(state)
   switch (action.type) {
     case "name":
       return {
@@ -92,9 +89,6 @@ const Signup = () => {
       }
     });
   };
-
-  //  console.log(data)
-
   return (
     <Box height="110vh" bg="#ffffff">
       <Navbar/>
@@ -128,6 +122,7 @@ const Signup = () => {
               <FormControl isRequired>
                 <FormLabel fontWeight="hairline">Full name</FormLabel>
                 <Input
+                isRequired={true}
                   focusBorderColor="#353535"
                   errorBorderColor="red.300"
                   type="text"
@@ -144,6 +139,7 @@ const Signup = () => {
               <FormControl isRequired>
                 <FormLabel fontWeight="hairline">Email address</FormLabel>
                 <Input
+                isRequired={true}
                   focusBorderColor="black"
                   errorBorderColor="red.300"
                   type="email"
@@ -160,6 +156,7 @@ const Signup = () => {
               <FormControl isRequired>
                 <FormLabel fontWeight="hairline">Phone</FormLabel>
                 <Input
+                isRequired={true}
                   focusBorderColor="black"
                   errorBorderColor="red.300"
                   type="number"
@@ -177,6 +174,7 @@ const Signup = () => {
                 <FormLabel fontWeight="hairline">Password</FormLabel>
                 <InputGroup>
                   <Input
+                  isRequired={true}
                     type={showPassword ? "text" : "password"}
                     value={state.password}
                     onChange={(e) =>
@@ -200,7 +198,7 @@ const Signup = () => {
           <Box paddingTop="26px">
             Already a user?{" "}
             <Link color="teal.500" href="sign-in">
-              Sign Up
+              Sign in
             </Link>
           </Box>
           <Button

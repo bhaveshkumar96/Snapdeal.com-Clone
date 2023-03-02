@@ -1,7 +1,7 @@
 # Snapdeal.com
-RCT-211 Collaborative Project - Replica of Snapdeal.com an E-Commerce Website for Shopping
+Snapdeal is India's leading pure-play value Ecommerce platform. 
+It was a Collaborative project built in 5 days by 5 team members.
 
-( Construct Week Project )
 Team of 5 Members
 1. Bhavesh Kumar
 2. Vaishnavi Dilip Borkar
@@ -12,10 +12,10 @@ Team of 5 Members
 Area of Responsiblity
 1. Bhavesh  - Landing page / Admin page 
 2. Vaishnavi - Authentication ( Login / Sign-up / Checkout-page )
-3. Surya Prakash - Products page ( men's)/ Product detail page
+3. Surya Prakash - Products page ( men's)/ Product detail page / Cart page
 4. Bhairavnath - Products page / Admin page (Beauty)
 5. Manish - Add to Cart Page 
-<h4 align="center">Technology used:</h4>
+<h4 align="center">Tech Stack used:</h4>
 <p align="center">
   <img src="https://img.shields.io/badge/React (18.2.0)-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="reactjs" />
   <img src="https://img.shields.io/badge/Redux (4.2.0)-593D88?style=for-the-badge&logo=redux&logoColor=white" alt="redux" />

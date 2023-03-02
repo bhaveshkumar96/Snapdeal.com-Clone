@@ -71,16 +71,6 @@ export const getAdminData = (dispatch) => {
     })
     .catch((err) => dispatch(getAdminDataFailure()));
 };
-
-// export const addAdminData =(newData)=>(dispatch)=>{
-//     dispatch(getAdminDataRequest())
-//    return axios.post(`https://snapdeal-productapi.onrender.com/beauty`, newData)
-//     .then((res)=> {
-//         dispatch(getAdminDataSuccess(res.data))
-//         console.log(res.data)
-//     })
-//     .catch((err)=> dispatch(getAdminDataFailure()))
-// }
 export const addAdminData = (newData) => (dispatch) => {
   dispatch(addAdminDataRequest());
   return axios
