@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import HomeCarousel from "./Curousel/HomeCarousel";
 import HomeCarousel1 from "./Curousel/HomeCarousel1";
 import HomeCarousel2 from "./Curousel/HomeCarousel2";
+import { Nav } from "./Nav";
 
 export const LandingPage = () => {
 
@@ -14,7 +15,7 @@ export const LandingPage = () => {
   return (
     <div>
       {/* <!-- ------mainbody------- --> */}
-      <Navbar/>
+      <Nav/>
       <div className={styles.container}>
         <div className={styles.leftside}   >
           <ul>
