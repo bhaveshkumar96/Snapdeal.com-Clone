@@ -6,7 +6,7 @@ import styles from '../Styles/Products.module.css'
 import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import { store } from '../Redux/store'
 import Loader from './Loader'
-import {Box, Flex, Heading, Text} from '@chakra-ui/react'
+import {Box, Flex, flexbox, Heading, Text} from '@chakra-ui/react'
 import Pagination from './Pagination'
 import SearchBar from './SearchHook'
 
@@ -83,19 +83,20 @@ const ProductList = () => {
     }, [location.search, limit, pageNumber,query])
 
     return (       
-      <div style={{margin:"auto", width:"100%", }}>
-      <Flex styles>
+      <div>
+      <div className={styles.searchdiv} >
+        <div style={{display:"flex"}}>
         <Link to={'/'} >
         <Text>Home  </Text>
         </Link>
         {'>>'} {" "}
         <Text> Product   </Text>{" "}
-        <Text paddingRight={'50px'}>:    </Text>{" "}
+        <Text >:</Text>{" "}
+        </div>
         <div style={{border:'1px solid gray', borderRadius:'5%', position:'relative', zIndex:'1'}}>
         <SearchBar queryHandler={queryHandler} suggestions={suggestions}/>  
         </div>
-        
-      </Flex>
+      </div>
      
 
       <Box className={styles.container} >
