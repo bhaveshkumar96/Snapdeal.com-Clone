@@ -72,19 +72,21 @@ const ProductList = () => {
   // console.log("product", product);
 
   return (
-    <div style={{ margin: "auto", width: "100%", }}>
-      <Flex>
+    <div>
+      <div className={styles.searchdiv} >
+        <div style={{display:"flex"}}>
         <Link to={'/'} >
-          <Text>Home  </Text>
+        <Text>Home  </Text>
         </Link>
         {'>>'} {" "}
         <Text> Product   </Text>{" "}
-        <Text paddingRight={'50px'}>:    </Text>{" "}
-        <div style={{ border: '1px solid gray', borderRadius: '5%' }}>
-          <SearchBar queryHandler={queryHandler} suggestions={suggestions} />
+        <Text >:</Text>{" "}
         </div>
+        <div style={{border:'1px solid gray', borderRadius:'5%', position:'relative', zIndex:'1'}}>
+        <SearchBar queryHandler={queryHandler} suggestions={suggestions}/>  
+        </div>
+      </div>
 
-      </Flex>
       <Box className={styles.container}>
         {isLoading && <Loader />}
         {product.length > 0 && product.map((el) => {

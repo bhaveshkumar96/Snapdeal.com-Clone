@@ -101,12 +101,12 @@ const ProductSidebar = () => {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            <div onChange={handleSort} style={{ fontSize: '15px', color: '#abc72c' }}>
+            <div onChange={handleSort} >
               <div className={styles.filtertitle}>
                 <input type="radio" name="sort_by" value={"asc"} defaultChecked={order === "asc"} />
                 <label>Low To High</label>
               </div>
-              <div className={styles.filtertitle} style={{ fontSize: '15px', color: '#abc72c' }}>
+              <div className={styles.filtertitle} >
                 <input type="radio" name="sort_by" value={"desc"} defaultChecked={order === "desc"} />
                 <label>High To Low</label>
               </div>
@@ -124,12 +124,12 @@ const ProductSidebar = () => {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            <div onChange={handleSort} style={{ fontSize: '15px', color: '#abc72c' }}>
+            <div onChange={handleSort} >
               <div className={styles.filtertitle}>
                 <input type="radio" name="sort" value={"asc"} defaultChecked={order === "asc"} />
                 <label>A to Z</label>
               </div>
-              <div className={styles.filtertitle} style={{ fontSize: '15px', color: '#abc72c' }}>
+              <div className={styles.filtertitle} >
                 <input type="radio" name="sort" value={"desc"} defaultChecked={order === "desc"} />
                 <label> Z to A</label>
               </div>
