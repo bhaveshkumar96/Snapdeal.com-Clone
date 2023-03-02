@@ -2,8 +2,9 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
-import styled from "styled-components"
-import styles from "./Navbar.module.css"
+// import styled from "styled-components"
+import styles from '../Styles/Navbar.module.css'
+// import styles from "./Navbar.module.css"
 export const Navbar = () => {
   const [input, setInput] = useState("")
 
@@ -34,9 +35,9 @@ console.log( cart);
         <div className={styles.search}>
           <input type="text" value={input} onChange={handleInputChange} placeholder="Search products & brands" />
           <button ><i class="fas fa-search"></i> Search</button>
-          <SuggestionBox>
+          {/* <SuggestionBox>
             
-          </SuggestionBox>
+          </SuggestionBox> */}
         </div>
         <div  className={styles.moreitemslist}>
           <div  className={styles.moreitems1}>
@@ -75,6 +76,6 @@ console.log( cart);
 
 export default Navbar
 
-const SuggestionBox =  styled.div`
-   border:1px solid black;
-`
+// const SuggestionBox =  styled.div`
+//    border:1px solid black;
+// `

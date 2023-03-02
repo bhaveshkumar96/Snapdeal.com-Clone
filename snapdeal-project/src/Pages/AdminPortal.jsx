@@ -52,7 +52,7 @@ export const AdminPortal = () => {
       dispatch(getAdminData);
     });
   };
-  const handleEdit = (id)=>{
+  const handleEdit = (id) => {
     let newEditData = {
       id,
       name,
@@ -138,10 +138,10 @@ export const AdminPortal = () => {
                         <img src={el.image} />
                       </Td>
                       <Td>
-                        <Button border={"1px solid gray"}  onClick={()=>handleEdit(el.id)}>EDIT</Button>
+                        <Button border={"1px solid gray"} onClick={() => handleEdit(el.id)}>EDIT</Button>
                       </Td>
                       <Td>
-                        <Button border={"1px solid gray"}  onClick={()=> handleDelete(el.id)}>
+                        <Button border={"1px solid gray"} onClick={() => handleDelete(el.id)}>
                           DELETE
                         </Button>
                       </Td>
@@ -152,7 +152,7 @@ export const AdminPortal = () => {
           </Table>
         </TableContainer>
       </div>
-       <Footer />
+      <Footer />
     </>
   );
 };

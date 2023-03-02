@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Link as Send }  from 'react-router-dom';
+import { Link as Send } from 'react-router-dom';
 import {
   IconButton,
   Avatar,
@@ -52,7 +52,7 @@ export default function SidebarWithHeader({
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box >
-      
+
       <SidebarContent
         onClose={() => onClose}
         display={{ base: 'none', md: 'block' }}
@@ -90,9 +90,9 @@ const SidebarContent = ({ onClose, ...rest }) => {
       pos="fixed"
       h="full"
       {...rest}>
-        
+
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-       <Send to={"/"}> <Image src='https://i.ibb.co/RD02FRm/final-logo-sastadeal.png'/></Send> 
+        <Send to={"/"}> <Image src='https://i.ibb.co/RD02FRm/final-logo-sastadeal.png' /></Send>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (

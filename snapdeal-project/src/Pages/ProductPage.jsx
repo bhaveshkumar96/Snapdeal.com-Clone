@@ -10,17 +10,17 @@ const ProductPage = () => {
 
   return (
     <DivWrapper>
-      <Navbar/>
+      <Navbar />
       <div className={styles["products-filter-container"]}>
         <div className={styles["filter-component"]}>
-            <ProductSidebar/>
+          <ProductSidebar />
         </div>
         <div className={styles["product-list"]} >
-        <ProductList/>
-        </div>       
+          <ProductList />
+        </div>
       </div>
-      <Footer/>
-      </DivWrapper>
+      <Footer />
+    </DivWrapper>
   )
 }
 
