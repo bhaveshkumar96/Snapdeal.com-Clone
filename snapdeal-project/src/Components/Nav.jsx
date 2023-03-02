@@ -15,6 +15,7 @@ import {
     Input,
     Link
   } from "@chakra-ui/react";
+  import styles from "./Navbar.module.css";
   import { BsFillCartFill } from "react-icons/bs";
   import { AiOutlineMenu,AiOutlineSearch } from "react-icons/ai";
   import { FaUserAlt } from "react-icons/fa";
@@ -133,10 +134,44 @@ import {
                   },
                 }}
               >
-               <BsFillCartFill/>
+                <Link href="/cart"><BsFillCartFill/></Link>
+               
               </chakra.a>
   
-              <FaUserAlt/>
+            
+              <div className={styles.moreitemslist}>
+        
+          <div className={styles.moreitems2}>
+          <FaUserAlt/>
+
+            <div className={styles.signsub}>
+              <ul>
+                <li>
+                  <i class="far fa-user"></i>
+                  <Link href="/account">Your Account</Link>
+                </li>
+                <li>
+                  <i class="fas fa-box-open"></i>{" "}
+                  <Link href="/cart">Your Orders</Link>{" "}
+                </li>
+              </ul>
+
+              <hr />
+
+              <p style={{marginBottom:"8px"}}>If you are a new user</p>
+
+              <Link href={"/sign-up"}>
+                {" "}
+                <h3 style={{ fontSize: "18px" }}>Register</h3>
+              </Link>
+
+              <Link href={"/login"}>
+                {" "}
+                <h3 style={{ fontSize: "18px" }}>Login</h3>{" "}
+              </Link>
+            </div>
+          </div>
+        </div>
             </HStack>
           </Flex>
         </chakra.header>
