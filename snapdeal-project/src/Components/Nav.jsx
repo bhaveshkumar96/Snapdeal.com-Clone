@@ -21,6 +21,7 @@ import {
   import { FaUserAlt } from "react-icons/fa";
   
   import React from "react";
+import SidebarContent from "./SidebarContent";
   export const Nav = () => {
     const bg = useColorModeValue("white", "gray.800");
     const mobileNav = useDisclosure();
@@ -80,6 +81,7 @@ import {
                   <Link href="/cart">Cart</Link>
                   <Link href="/login">Login</Link>
                   <Link href="/sign-up">Sign-up</Link>
+                  {/* <SidebarContent/> */}
                   <CloseButton
                     aria-label="Close menu"
                     justifySelf="self-start"
