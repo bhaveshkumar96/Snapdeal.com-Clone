@@ -25,6 +25,8 @@ import {
 } from "../Redux/SignupAuth/actionTypes";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
+
 function reducer(state, action) {
   switch (action.type) {
     case "name":

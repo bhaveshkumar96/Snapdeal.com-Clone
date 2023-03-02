@@ -1,6 +1,6 @@
 import Carousel from "react-bootstrap/Carousel";
 import {HStack, Stack,Image, Text, Heading} from "@chakra-ui/react"
-import styles from "./Navbar.module.css";
+import styles from '../Styles/Navbar.module.css'
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";

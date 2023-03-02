@@ -1,6 +1,8 @@
 import { HStack,Box } from "@chakra-ui/react";
 import { resolvePath } from "react-router-dom";
-import styles from "./Navbar.module.css";
+import styles from '../Styles/Navbar.module.css'
+
+
 export const Footer = () => {
   return (
     <div>

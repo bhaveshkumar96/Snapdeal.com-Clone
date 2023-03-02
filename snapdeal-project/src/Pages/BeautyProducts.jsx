@@ -12,17 +12,17 @@ const BeautyProductPage = () => {
 
   return (
     <DivWrapper>
-      <Navbar/>
+      <Navbar />
       <div className={styles["products-filter-container"]}>
         <div className={styles["filter-component"]}>
-            <SideBar/>
+          <SideBar />
         </div>
         <div className={styles["product-list"]} >
-        <ProductList/>
-        </div>       
+          <ProductList />
+        </div>
       </div>
-      <Footer/>
-      </DivWrapper>
+      <Footer />
+    </DivWrapper>
   )
 }
 
