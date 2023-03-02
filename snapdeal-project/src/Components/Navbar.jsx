@@ -1,14 +1,24 @@
+import { useEffect } from "react"
 import { useState } from "react"
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 import styled from "styled-components"
 import styles from "./Navbar.module.css"
 export const Navbar = () => {
   const [input, setInput] = useState("")
 
+  const {cart, isLoading} = useSelector((store)=>{return {
+    cart: store.CartReducer.cart,   
+    isLoading :  store.CartReducer.isLoading
+    }})
+console.log( cart);
   const handleInputChange =(e)=>{
     setInput(e.target.value)
   }
-  // console.log(input)
+
+  useEffect(()=>{
+    
+  },[cart])
   return <div>
       
       <nav className={styles.mainnav}>
@@ -30,7 +40,9 @@ export const Navbar = () => {
         </div>
         <div  className={styles.moreitemslist}>
           <div  className={styles.moreitems1}>
-            <Link to={"/cart"}>Cart <i class="fas fa-shopping-cart"></i></Link>
+            <Link to={"/cart"}>
+              Cart ({cart.length}) <i class="fas fa-shopping-cart"></i>
+              </Link>
           </div>
           <div className={styles.moreitems2}>
             <a href="/signup" id="user_name"
