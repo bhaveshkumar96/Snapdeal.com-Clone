@@ -7,10 +7,10 @@ import { Link } from "react-router-dom";
 import HomeCarousel from "./Curousel/HomeCarousel";
 import HomeCarousel1 from "./Curousel/HomeCarousel1";
 import HomeCarousel2 from "./Curousel/HomeCarousel2";
+
 export const LandingPage = () => {
 
-
-
+  
   return (
     <div>
       {/* <!-- ------mainbody------- --> */}
