@@ -1,18 +1,9 @@
-// import { useDisclosure } from '@chakra-ui/react';
 import React from 'react'
-import Carousel from "react-bootstrap/Carousel";
-import { HStack, Stack, Image, Text, Heading, useDisclosure } from "@chakra-ui/react"
 import styles from '../Styles/Navbar.module.css'
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import HomeCarousel from "./Curousel/HomeCarousel";
-import HomeCarousel1 from "./Curousel/HomeCarousel1";
-import HomeCarousel2 from "./Curousel/HomeCarousel2";
-import { Nav } from "./Nav";
 
 const SidebarContent = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
+
     return (
         <div className={styles.leftside}   >
             <ul>

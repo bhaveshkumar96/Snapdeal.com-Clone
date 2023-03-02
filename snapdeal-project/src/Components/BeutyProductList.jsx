@@ -21,7 +21,7 @@ const ProductList = () => {
 
   const location = useLocation()
   const [searchParams] = useSearchParams()
-  // console.log(location)
+
 
   const [pageFilter, setPageFilter] = useState({
     pageNumber: 1,
@@ -69,7 +69,6 @@ const ProductList = () => {
     dispatch(getProducts(paramObj, limit, pageNumber, query))
   }, [location.search, limit, pageNumber, query])
 
-  // console.log("product", product);
 
   return (
     <div>

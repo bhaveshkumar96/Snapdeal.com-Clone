@@ -27,19 +27,6 @@ const ProductList = () => {
    })
    const {pageNumber, limit}= pageFilter;
     
-
-    // useEffect(()=>{
-    //     const order = searchParams.get("order")      
-    //     let paramObj = {
-    //       params: {
-    //         category: searchParams.getAll("category"),   
-    //         _sort: "price" ,                        
-    //         _order: order,
-    //       },
-    //     };
-    //     dispatch(getData(paramObj,limit,pageNumber))
-    //   }, [location.search, limit, pageNumber])
-
     console.log("product", product);
      
     //search functionality
@@ -69,7 +56,8 @@ const ProductList = () => {
       }
       // dispatch(getData({query},limit,pageNumber))  
     },[query])
-    // console.log("order h:", order);
+
+
     useEffect(()=>{
       const order = searchParams.get("order")
       let paramObj = {
