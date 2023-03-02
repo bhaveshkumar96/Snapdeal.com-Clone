@@ -10,22 +10,7 @@ export const Navbar = () => {
   }
   // console.log(input)
   return <div>
-      <div>
-      <nav className={styles.topnav}>
-        <h2>Brand Waali Quality, Bazaar Waali Deal!</h2>
-        <ul>
-          <li><a href="">Impact@Snapdeal</a></li>
-          <li><a href="">Gift Cards</a></li>
-          <li><a href="">Help Center</a></li>
-          <li><a href="">Sell On Snapdeal</a></li>
-          <li>
-            <a href=""> <i class="fas fa-mobile-alt"></i> Download App</a>
-          </li>
-        </ul>
-      </nav>
-      </div>
-       
-
+      
       <nav className={styles.mainnav}>
         <div className={styles.logoimg}>
           <Link to={"/"}>
@@ -48,24 +33,22 @@ export const Navbar = () => {
             <Link to={"/cart"}>Cart <i class="fas fa-shopping-cart"></i></Link>
           </div>
           <div className={styles.moreitems2}>
-            <a href="" id="user_name"
+            <a href="/signup" id="user_name"
               >Sign In <i  class="fas fa-user-circle"></i></a>
 
             <div  className={styles.signsub} >
               <ul>
-                <li><i class="far fa-user"></i>Your Account</li>
-                <li><i class="fas fa-box-open"></i>Your Orders</li>
-                <li><i class="far fa-heart"></i>Shortlist</li>
-                <li><i class="fas fa-hand-holding-usd"></i>SD Cash</li>
+                <li><i class="far fa-user"></i><Link to="/account">Your Account</Link></li>
+                <li><i class="fas fa-box-open"></i> <Link to="/cart">Your Orders</Link>  </li>
               </ul>
 
               <hr />
 
               <p>If you are a new user</p>
 
-              <Link to={"/sign-up"}> <h3>Register</h3></Link>
+              <Link to={"/sign-up"}> <h3 style={{fontSize:"20px"}}>Register</h3></Link>
 
-              <Link to={"/login"} >Login</Link>
+              <Link to={"/login"} > <h3 style={{fontSize:"20px"}}>Login</h3>  </Link>
             </div>
           </div>
         </div>

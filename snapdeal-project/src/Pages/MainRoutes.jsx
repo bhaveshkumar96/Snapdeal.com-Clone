@@ -10,6 +10,7 @@ import  Login  from '../Components/Login/Login'
 import  Checkout  from '../Components/Checkout/Checkout'
 import { AdminPortal } from './AdminPortal'
 import AddCart from '../Components/AddCart'
+import { AccountDetails } from './AccountDetails'
 
 const MainRoutes = () => {
 
@@ -24,6 +25,7 @@ const MainRoutes = () => {
         <Route path="/products/:id" element={<SinglePage/>}></Route>
         <Route path="/products" element={<BeautyProductPage/>}></Route>
         <Route path="/cart" element={<AddCart/>}></Route>
+        <Route path="/account" element={<AccountDetails/>}></Route>
     </Routes>
   )
 }

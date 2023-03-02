@@ -182,11 +182,12 @@
   }
   
   .moreitems2:hover .signsub {
+    align-items: center;
     width: 200px;
     text-align: center;
     /* width: auto; */
     position: absolute;
-    height: 260px;
+    height: 200px;
     margin-top: 21px;
     margin-left: -67px;
     display: block;
@@ -671,13 +672,16 @@
    .search{
       display: none;
      }
+     .topCat{
+      display: none;
+    }
       
   }
-  /* @media all and (min-width:450 ) and (max-width: 651px) {
-      .leftside{
+  @media all and (min-width:480 ) and (max-width: 651px) {
+      .topCat{
         display: none;
       }
-  } */
+  }
   .cardsitems {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
