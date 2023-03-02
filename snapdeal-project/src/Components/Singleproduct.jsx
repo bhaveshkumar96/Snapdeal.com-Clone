@@ -17,17 +17,26 @@ import {
     ListItem,
     useToast,
   } from '@chakra-ui/react';
+import { useState } from 'react';
   import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
   import { MdLocalShipping } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { postData } from '../Redux/Products/action';
   
   export default function SingleProduct({ id, name, image, price, category, shipping, star }) {
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
   const toast = useToast()
+const navigate= useNavigate()
+
+const {isAuth}= useSelector((store)=> store.LoginReducer.isAuth)
+  const [status, setStatus]= useState(false)
+  const [cartloading, setCartloading]= useState(false)
+
   const handdleCart = () => {
-    // console.log("clicked yaa");
+    setStatus(true)
+    setCartloading(true)
     const data = {
       name, image, price, category, shipping, star
     }
@@ -40,6 +49,7 @@ import { postData } from '../Redux/Products/action';
       duration: 9000,
       isClosable: true,
     })
+    setCartloading(false)
   }
     return (
       <Container maxW={'7xl'}>
@@ -87,16 +97,10 @@ import { postData } from '../Redux/Products/action';
                   color={useColorModeValue('gray.500', 'gray.400')}
                   fontSize={'2xl'}
                   fontWeight={'300'}>
-                  {/* Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                  diam nonumy eirmod tempor invidunt ut labore */}
                   {category}
                 </Text>
                 <Text fontSize={'lg'}>
-                  {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                  aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                  maxime modi nam officiis porro, quae, quisquam quos
-                  reprehenderit velit? Natus, totam. */}
-                  {shipping}
+                {shipping}
                 </Text>
               </VStack>
               <Box>
@@ -192,9 +196,24 @@ import { postData } from '../Redux/Products/action';
                 transform: 'translateY(2px)',
                 boxShadow: 'lg',
               }}
-              onClick={handdleCart}
+              isDisabled={cartloading}
+            isLoading={cartloading}
+            onClick={()=>{
+              // if(isAuth){
+               if(!status){
+                 handdleCart()
+               }else{
+                 navigate("/cart")
+               }
+              // }else{
+              //  navigate("/login")
+              // }
+             }
+             }
               >
-              Add to cart
+                <Text fontSize={"20px"} ml={"10px"} color="white" >
+              {status? "Go To Cart" : "Add to cart" }
+            </Text>
             </Button>
   
             <Stack direction="row" alignItems="center" justifyContent={'center'}>
