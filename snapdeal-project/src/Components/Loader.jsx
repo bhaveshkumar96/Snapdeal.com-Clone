@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spinner, Heading, Box, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+import { Spinner } from '@chakra-ui/react'
 import { Progress } from '@chakra-ui/react'
 const Loader = () => {
   return (
@@ -16,7 +16,3 @@ const Loader = () => {
 }
 
 export default Loader
-
-
-
-{/* <Progress size='xs' isIndeterminate /> */ }

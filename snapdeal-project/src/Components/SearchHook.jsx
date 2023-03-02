@@ -62,7 +62,6 @@ const SearchBar = ({queryHandler,suggestions}) => {
  },[throttleText,queryHandler])
 
  const handleClear=()=>{
-    // console.log("hooogyua");
     setInput("")
  }
 

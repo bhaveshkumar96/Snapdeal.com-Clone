@@ -35,9 +35,8 @@ export const Navbar = () => {
       <div className={styles.search}>
         <input type="text" value={input} onChange={handleInputChange} placeholder="Search products & brands" />
         <button ><i class="fas fa-search"></i> </button>
-        {/* <SuggestionBox>
-            
-          </SuggestionBox> */}
+       
+       
       </div>
       <div className={styles.moreitemslist}>
         <div className={styles.moreitems1}>
