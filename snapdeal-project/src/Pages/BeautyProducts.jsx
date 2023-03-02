@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ProductSidebar from '../Components/ProductSidebar'
 import styles from '../Styles/Products.module.css'
 import styled from 'styled-components'
 import SideBar from '../Components/BeutySideBar'
