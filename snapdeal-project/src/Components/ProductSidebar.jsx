@@ -21,8 +21,8 @@ const ProductSidebar = () => {
   console.log(order)
 
   const handleFilter = (e) => {
-    const array = [...category]                  //array or newCategory
-    if (array.includes(e.target.value)) {        //filter , splice/slice
+    const array = [...category]                
+    if (array.includes(e.target.value)) {       
       array.splice(array.indexOf(e.target.value), 1);
     }
     else {
@@ -36,9 +36,9 @@ const ProductSidebar = () => {
   }
   useEffect(() => {
     const params = {
-      category,   //order
+      category,  
     };
-    order && (params.order = order)  // to add order in the params
+    order && (params.order = order)
     setSearchparams(params)
   }, [category, order])
 

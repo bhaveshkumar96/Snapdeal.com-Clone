@@ -10,6 +10,7 @@ const login = (params) => (dispatch) => {
       console.log(r.data);
       return types.LOGIN_SUCCESS;
     })
+    
     .catch((e) => {
       dispatch({ type: types.LOGIN_FAILURE, payload: e });
       return types.LOGIN_FAILURE;

@@ -67,7 +67,7 @@ const ProductList = () => {
         console.log(newSuggestions)
         setSuggestions(newSuggestions)
       }
-    // dispatch(getData({query},limit,pageNumber))  
+      // dispatch(getData({query},limit,pageNumber))  
     },[query])
     // console.log("order h:", order);
     useEffect(()=>{
@@ -84,15 +84,14 @@ const ProductList = () => {
 
     return (       
       <div style={{margin:"auto", width:"100%", }}>
-      {/* <h3>Search Query : {query}</h3> */}
-      <Flex>
+      <Flex styles>
         <Link to={'/'} >
         <Text>Home  </Text>
         </Link>
         {'>>'} {" "}
         <Text> Product   </Text>{" "}
         <Text paddingRight={'50px'}>:    </Text>{" "}
-        <div style={{border:'1px solid gray', borderRadius:'5%'}}>
+        <div style={{border:'1px solid gray', borderRadius:'5%', position:'relative', zIndex:'1'}}>
         <SearchBar queryHandler={queryHandler} suggestions={suggestions}/>  
         </div>
         
@@ -104,10 +103,6 @@ const ProductList = () => {
           return <ProductCards key={el.id} id={el.id} name={el.name} image={el.image} price={el.price} category={el.category} shipping={el.shipping} star={el.star}/>
         })}      
     
-        {/* {product.length>0 && product.map((el)=>{
-          return <ProductCards key={el.id} id={el.id} name={el.name} image={el.image} price={el.price} category={el.category} shipping={el.shipping} star={el.star}/>
-        })} */}
-        
       </Box>
         <div style={{display:'grid', justifyContent:'center'}} className={styles.container} >
           <Pagination pageFilter={pageFilter} setPageFilter={setPageFilter} />

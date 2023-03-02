@@ -26,9 +26,6 @@ export const  postCartProductsFailure=()=>{
 
 
 
-//
-
-
 export const deleteCartProductsRequest=()=>{
     return {type:DELETE_CART_PRODUCTS_REQUEST}
 }
@@ -41,7 +38,6 @@ export const deleteCartProductsFailure=()=>{
 }
 
 
-
 export const postData=(newData)=>(dispatch)=>{
     dispatch(postCartProductsRequest())
     axios.post(`https://snapdeal-productapi.onrender.com/posts`, newData)
@@ -50,7 +46,6 @@ export const postData=(newData)=>(dispatch)=>{
         dispatch(postCartProductsSuccess(res.data))
     }).catch((err)=> dispatch(postCartProductsFailure()))
 }
-
 
 
 export const getCartItem=()=>(dispatch)=>{
