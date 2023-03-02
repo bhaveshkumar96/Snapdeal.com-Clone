@@ -43,7 +43,7 @@ const ProductSidebar = () => {
   }, [category, order])
 
   return (
-    <div className={styles.sidebar} >
+    <div className={styles.sidebar}>
 
       <Heading as='h4' size='md' color={"black"} paddingTop='50px' className={styles.filterHeading}>
         Mens Fashion
