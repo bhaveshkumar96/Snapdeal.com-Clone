@@ -10,13 +10,13 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from "./Redux/store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-<BrowserRouter>
-  <ChakraProvider>
-    <Provider store={store}>
-    <App />
-    </Provider>
-  </ChakraProvider>
-</BrowserRouter>
+  <BrowserRouter>
+    <ChakraProvider>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ChakraProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

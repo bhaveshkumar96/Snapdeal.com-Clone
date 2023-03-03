@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-// import ProductList from '../Components/ProductList'
-import ProductSidebar from '../Components/ProductSidebar'
 import styles from '../Styles/Products.module.css'
 import styled from 'styled-components'
 import SideBar from '../Components/BeutySideBar'
@@ -12,17 +10,17 @@ const BeautyProductPage = () => {
 
   return (
     <DivWrapper>
-      <Navbar/>
+      <Navbar />
       <div className={styles["products-filter-container"]}>
         <div className={styles["filter-component"]}>
-            <SideBar/>
+          <SideBar />
         </div>
         <div className={styles["product-list"]} >
-        <ProductList/>
-        </div>       
+          <ProductList />
+        </div>
       </div>
-      <Footer/>
-      </DivWrapper>
+      <Footer />
+    </DivWrapper>
   )
 }
 

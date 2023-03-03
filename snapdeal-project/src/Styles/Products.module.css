@@ -1,8 +1,6 @@
 .products-filter-container {
     display: flex;
     gap: 10px;
-    /* width: '95%';
-    margin: 'auto'; */
 }
 
 .filter-component {
@@ -25,13 +23,14 @@
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
 
 }
-.cartItem{
+
+.cartItem {
     width: '100%';
     margin: 'auto';
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
-    gap:'10px';
+    gap: '10px';
     margin-top: '10px';
 }
 
@@ -59,57 +58,61 @@
 .sidebar {
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
     background-color: whitesmoke;
-    
 }
 
-.searchdiv{
+.searchdiv {
     display: flex;
     width: 30%;
     justify-content: start;
-    
+
 }
 
 @media all and (max-width: 768px) and (min-width:426px) {
-    
+
     .filter-component {
         width: 30%;
     }
-    
+
     .product-list {
         width: 70%;
     }
+
     .filterHeading {
         padding-left: 20px;
         font-size: 15px;
     }
-    
+
     .filtertitle {
         padding-left: 40px;
         font-size: 13px;
     }
-    .searchdiv{
-        display: grid;   
+
+    .searchdiv {
+        display: grid;
     }
 }
 
 @media all and (max-width: 425px) and (min-width:200px) {
+    
     .filter-component {
         width: 30%;
     }
-    
+
     .product-list {
         width: 70%;
     }
+
     .filterHeading {
         padding-left: 7px;
         font-size: 12px;
     }
-    
+
     .filtertitle {
         padding-left: 11px;
         font-size: 11px;
     }
-    .searchdiv{
-        display: grid;   
+
+    .searchdiv {
+        display: grid;
     }
-  }
+}

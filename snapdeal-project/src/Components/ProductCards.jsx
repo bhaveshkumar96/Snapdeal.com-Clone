@@ -94,9 +94,7 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
         <Link to={`/products/${id}`}>
           <Image
             src={image}
-            className={styles.imag}
-            // boxSize='180px'
-            // objectFit='cover'  
+            className={styles.imag} 
             alt={`Picture of ${name}`}
             roundedTop="md"
           />
@@ -135,7 +133,6 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
 
           <Flex justifyContent="space-between" alignContent="center">
             <Rating rating={star}
-            //   numReviews={data.numReviews}
             />
             <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
               <Box as="span" color={'gray.600'} fontSize="md">

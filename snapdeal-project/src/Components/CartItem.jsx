@@ -32,7 +32,7 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
     </Stack>
   </CardBody>
   <Divider />
-  {/* <CardFooter> */}
+  
     <ButtonGroup spacing='2' paddingBottom={'5px'}>
         <Button variant='ghost' colorScheme='blue' onClick={()=>handleDelete(id)}>
         Delete
@@ -43,7 +43,7 @@ const CartItem = ({ id, name, image, price, category, shipping, star }) => {
       </Button>
       </Link>  
     </ButtonGroup>
-  {/* </CardFooter> */}
+  
 </Card>
   )
 }
