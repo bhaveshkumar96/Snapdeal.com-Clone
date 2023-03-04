@@ -3,12 +3,10 @@ import { useState,useEffect, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import {  useLocation, useNavigate, useSearchParams } from "react-router-dom"
 import { useThrottle } from "use-throttle"
-import { getData, getMenData } from "../Redux/Products/action"
+import {getMenData } from "../Redux/Products/action"
 // import styled from "styled-components"
 import styles from '../Styles/Navbar.module.css'
 import Loader from "./Loader"
-import ProductCards from "./ProductCards"
-import SearchBar from "./SearchHook"
 
 
 export const Navbar = () => {
