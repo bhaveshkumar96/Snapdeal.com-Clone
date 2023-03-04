@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
@@ -9,17 +9,20 @@ import SingleProduct from '../Components/Singleproduct'
 const SinglePage = () => {
 
   const { id } = useParams()
-  console.log("id is:", id)
-  const product = useSelector((store) => store.MensProductReducer.product)
-
+     
+  const ID=+id
+  // console.log("id is:", ID, "type of", typeof(ID))
   const [data, setData] = useState({})
-  const dispatch = useDispatch()
 
+  const product = useSelector((store) => store.MensProductReducer.product)
+ 
   useEffect(() => {
-    let search = product.find((el) => el.id === +id)
-    search && setData(search)
-  }, [])
 
+    let searchData = product.find((el) => el.id === ID)
+    searchData && setData(searchData)
+  }, [product])
+
+  console.log("data",data)
   
   return (
     <div>
@@ -27,6 +30,7 @@ const SinglePage = () => {
 
       {data && <SingleProduct image={data.image} name={data.name} price={data.price} category={data.category} shipping={data.shipping} star={data.star} />
       }
+
       <Footer />
     </div>
   )

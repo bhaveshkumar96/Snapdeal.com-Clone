@@ -14,7 +14,7 @@ import {
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
 import { FiShoppingCart } from 'react-icons/fi';
 import { useDispatch } from 'react-redux';
-import { getData, getDatabhaii, postData } from '../Redux/Products/action';
+import { getData, getMenData, postData } from '../Redux/Products/action';
 import { Link } from 'react-router-dom'
 import styles from '../Styles/Products.module.css'
 import { useEffect } from 'react';
@@ -57,7 +57,7 @@ function ProductCards({ id, name, image, price, category, shipping, star }) {
     const data = {
       name, image, price, category, shipping, star
     }
-    dispatch(postData(data)).then(()=>getDatabhaii() )
+    dispatch(postData(data)).then(()=>getMenData() )
     
     toast({
       title: 'Added ',

@@ -1,7 +1,9 @@
 import React from 'react'
 import { Spinner } from '@chakra-ui/react'
 import { Progress } from '@chakra-ui/react'
+
 const Loader = () => {
+
   return (
     <div style={{ size: 'lg', textAlign: 'center', paddingLeft: '80%', paddingTop: '50%' }}>
       <Spinner
