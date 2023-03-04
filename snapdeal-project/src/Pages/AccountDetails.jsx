@@ -1,8 +1,31 @@
-import { Box, Flex, Image, chakra } from "@chakra-ui/react"
+import { Box, Flex, Image, chakra } from "@chakra-ui/react";
 import { BsFillBriefcaseFill } from "react-icons/bs";
 import { MdHeadset, MdLocationOn, MdEmail } from "react-icons/md";
 import Navbar from "../Components/Navbar";
+import React, { useState, useEffect } from "react";
+
 export const AccountDetails = () => {
+  const [user, setUser] = useState([]);
+  const username = localStorage.getItem("username");
+  const userage = localStorage.getItem("userage");
+  const useremail = localStorage.getItem("useremail");
+  const usercity = localStorage.getItem("usercity");
+  const usergender = localStorage.getItem("usergender");
+
+  const getData = (userid) => {
+    return fetch(
+      `https://erin-average-antelope.cyclic.app/users/register/${userid}`
+    ).then((res) => res.json());
+  };
+  useEffect(() => {
+    let userid = localStorage.getItem("userid");
+
+    getData(userid).then((res) => {
+      console.log(res);
+      setUser(res);
+    });
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -53,7 +76,7 @@ export const AccountDetails = () => {
                 color: "white",
               }}
             >
-              Patterson johnson
+              {username}
             </chakra.h1>
 
             <chakra.p
@@ -63,8 +86,7 @@ export const AccountDetails = () => {
                 color: "gray.400",
               }}
             >
-              Full Stack maker & UI / UX Designer , love hip hop music Author of
-              Building UI.
+              {useremail}
             </chakra.p>
 
             <Flex
@@ -78,7 +100,7 @@ export const AccountDetails = () => {
               <BsFillBriefcaseFill h={6} w={6} mr={2} />
 
               <chakra.h1 px={2} fontSize="sm">
-                Choc UI
+                {usergender}
               </chakra.h1>
             </Flex>
 
@@ -93,7 +115,7 @@ export const AccountDetails = () => {
               <MdLocationOn h={6} w={6} mr={2} />
 
               <chakra.h1 px={2} fontSize="sm">
-                California
+                {usercity}
               </chakra.h1>
             </Flex>
             <Flex
@@ -107,12 +129,12 @@ export const AccountDetails = () => {
               <MdEmail h={6} w={6} mr={2} />
 
               <chakra.h1 px={2} fontSize="sm">
-                patterson@example.com
+                {userage}
               </chakra.h1>
             </Flex>
           </Box>
         </Box>
       </Flex>
     </>
-  )
-}
+  );
+};

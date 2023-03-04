@@ -1,229 +1,158 @@
-import React, { useReducer, useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import {
+  Flex,
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Button,
-  Divider,
   FormControl,
   FormLabel,
-  Heading,
   Input,
   InputGroup,
+  HStack,
   InputRightElement,
-  Link,
   Stack,
-  useToast,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+  Link,
+  Image,
+  Container,
 } from "@chakra-ui/react";
+import { useContext, useState } from "react";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
-import register from "../Redux/SignupAuth/action";
-import {
-  REGISTER_FAILURE,
-  REGISTER_SUCCESS,
-} from "../Redux/SignupAuth/actionTypes";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { Appcontext } from "../context/Appcontext";
 
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "name":
-      return {
-        ...state,
-        name: action.payload,
-      };
-    case "email":
-      return {
-        ...state,
-        email: action.payload,
-      };
-
-    case "password":
-      return {
-        ...state,
-        password: action.payload,
-      };
-
-    case "phone":
-      return {
-        ...state,
-        phone: action.payload,
-      };
-    default:
-      return state;
-  }
-}
-
-const initialState = {
-  name: "",
-  email: "",
-  password: "",
-  phone: "",
-};
-
-const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [state, setter] = useReducer(reducer, initialState);
+function Signup() {
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
-  const toast = useToast();
-  const signupHandler = () => {
-    dispatch(register(state)).then((r) => {
-      if (r === REGISTER_SUCCESS) {
-        toast({
-          title: "Account created.",
-          description: "Your account has been successfully created",
-          status: "success",
-          duration: 5000,
-          isClosable: true,
-        });
-        navigate("/login", { replace: true });
-      } else if (r === REGISTER_FAILURE) {
-        toast({
-          description: "Please enter credentials",
-          status: "error",
-          duration: 5000,
-          isClosable: true,
-        });
-      }
-    });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
   };
-  return (
-    <Box height="110vh" bg="#ffffff">
-      <Navbar/>
-      <Divider orientation="horizontal" />
-      <Box
-        width="1150px"
-        position="center"
-        margin="auto"
-        padding="20px 0px 80px 0px"
-        height="900px"
-      >
-        <Box width="20%" textAlign="left">
-          <Breadcrumb fontWeight="light" fontSize="sm">
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/sign-up">Sign-Up</BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-        </Box>
-        <Box width="100%" padding="20px 0px 20px">
-          <Heading as="h3" size="lg" fontWeight="medium" textAlign="center">
-            Sign Up
-          </Heading>
-        </Box>
-        <Divider orientation="horizontal" />
-        <Box width="50%" margin="0 auto" padding="50px 0px 0px 0px">
-          <Stack spacing={4}>
-            <Box background="none" color="none">
-              <FormControl isRequired>
-                <FormLabel fontWeight="hairline">Full name</FormLabel>
-                <Input
-                isRequired={true}
-                  focusBorderColor="#353535"
-                  errorBorderColor="red.300"
-                  type="text"
-                  size="lg"
-                  borderRadius="0px"
-                  value={state.name}
-                  onChange={(e) =>
-                    setter({ type: "name", payload: e.target.value })
-                  }
-                />
-              </FormControl>
-            </Box>
-            <Box>
-              <FormControl isRequired>
-                <FormLabel fontWeight="hairline">Email address</FormLabel>
-                <Input
-                isRequired={true}
-                  focusBorderColor="black"
-                  errorBorderColor="red.300"
-                  type="email"
-                  value={state.email}
-                  onChange={(e) =>
-                    setter({ type: "email", payload: e.target.value })
-                  }
-                  size="lg"
-                  borderRadius="0px"
-                />
-              </FormControl>
-            </Box>
-            <Box>
-              <FormControl isRequired>
-                <FormLabel fontWeight="hairline">Phone</FormLabel>
-                <Input
-                isRequired={true}
-                  focusBorderColor="black"
-                  errorBorderColor="red.300"
-                  type="number"
-                  value={state.mobile}
-                  onChange={(e) =>
-                    setter({ type: "phone", payload: e.target.value })
-                  }
-                  size="lg"
-                  borderRadius="0px"
-                />
-              </FormControl>
-            </Box>
-            <Box>
-              <FormControl isRequired>
-                <FormLabel fontWeight="hairline">Password</FormLabel>
-                <InputGroup>
-                  <Input
-                  isRequired={true}
-                    type={showPassword ? "text" : "password"}
-                    value={state.password}
-                    onChange={(e) =>
-                      setter({ type: "password", payload: e.target.value })
-                    }
-                  />
-                  <InputRightElement h={"full"}>
-                    <Button
-                      variant={"ghost"}
-                      onClick={() =>
-                        setShowPassword((showPassword) => !showPassword)
-                      }
-                    >
-                      {/* {showPassword ? <ViewIcon /> : <ViewOffIcon />} */}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-              </FormControl>
-            </Box>
-          </Stack>
-          <Box paddingTop="26px">
-            Already a user?{" "}
-            <Link color="teal.500" href="sign-in">
-              Sign in
-            </Link>
-          </Box>
-          <Button
-            borderRadius="0px"
-            width="180px"
-            color="white"
-            onClick={signupHandler}
-            background="#302C26"
-            padding="20px"
-            marginTop="20px"
-            _hover={{
-              color: "#302C26",
-              background: "#ffffff",
-              border: "1px solid black",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Box>
-      </Box>
-      <Footer/>
-    </Box>
-  );
-};
 
+  const { handleSignup } = useContext(Appcontext);
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  return (
+    <Container maxW={"5xl"}>
+      <HStack>
+        <Box flex={1}>
+          <Image src="https://images.bewakoof.com/web/desktop-sign-up-banner--1623760676.png" />
+        </Box>
+        <Flex
+          minH={"100vh"}
+          align={"center"}
+          justify={"center"}
+          bg={useColorModeValue("gray.50", "gray.800")}
+        >
+          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+            <Stack align={"center"}>
+              <Heading fontSize={"4xl"} textAlign={"center"}>
+                Sign up
+              </Heading>
+              <Text fontSize={"lg"} color={"gray.600"}>
+                to enjoy all of our cool feature
+              </Text>
+            </Stack>
+            <form onSubmit={(e) => handleSignup(e, user)}>
+              <Box
+                rounded={"lg"}
+                bg={useColorModeValue("white", "gray.700")}
+                boxShadow={"lg"}
+                p={8}
+              >
+                <Stack spacing={4}>
+                  <HStack>
+                    <Box>
+                      <FormControl id="firstName" isRequired>
+                        <FormLabel>First Name</FormLabel>
+                        <Input
+                          onChange={handleChange}
+                          name="name"
+                          type="text"
+                        />
+                      </FormControl>
+                    </Box>
+                    <Box>
+                      <FormControl id="lastName">
+                        <FormLabel>Last Name</FormLabel>
+                        <Input
+                          onChange={handleChange}
+                          name="lastname"
+                          type="text"
+                        />
+                      </FormControl>
+                    </Box>
+                  </HStack>
+                  <FormControl id="email" isRequired>
+                    <FormLabel>Email address</FormLabel>
+                    <Input onChange={handleChange} name="email" type="text" />
+                  </FormControl>
+                  <FormControl id="password" isRequired>
+                    <FormLabel>Password</FormLabel>
+                    <InputGroup>
+                      <Input
+                        onChange={handleChange}
+                        name="password"
+                        type={showPassword ? "text" : "password"}
+                      />
+                      <InputRightElement h={"full"}>
+                        <Button
+                          variant={"ghost"}
+                          onClick={() =>
+                            setShowPassword((showPassword) => !showPassword)
+                          }
+                        >
+                          {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                        </Button>
+                      </InputRightElement>
+                    </InputGroup>
+                  </FormControl>
+                  <FormControl id="age" isRequired>
+                    <FormLabel>Age</FormLabel>
+                    <Input onChange={handleChange} name="age" type="text" />
+                  </FormControl>
+                  <FormControl id="gender" isRequired>
+                    <FormLabel>Gender</FormLabel>
+                    <Input onChange={handleChange} name="gender" type="text" />
+                  </FormControl>
+                  <FormControl id="city" isRequired>
+                    <FormLabel>City</FormLabel>
+                    <Input onChange={handleChange} name="city" type="text" />
+                  </FormControl>
+                  <Stack spacing={10} pt={2}>
+                    <Button
+                      type="submit"
+                      // value={"Submit"}
+                      loadingText="Submitting"
+                      size="lg"
+                      bg={"blue.400"}
+                      color={"white"}
+                      _hover={{
+                        bgImage: "linear-gradient(to right, #58aa50 ,#f09e06 )",
+                      }}
+                      bgImage={"linear-gradient(to right, #f09e06 , #fc490b )"}
+                    >
+                      Sign up
+                    </Button>
+                  </Stack>
+                  <Stack pt={6}>
+                    <Text align={"center"}>
+                      Already a user?{" "}
+                      <Link href="login" color={"blue.400"}>
+                        Login
+                      </Link>
+                    </Text>
+                  </Stack>
+                </Stack>
+              </Box>
+            </form>
+          </Stack>
+        </Flex>
+      </HStack>
+    </Container>
+  );
+}
 export default Signup;
