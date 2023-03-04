@@ -1,185 +1,103 @@
-
-import React, { useState } from "react";
 import {
+  Flex,
   Box,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  Button,
-  Divider,
   FormControl,
   FormLabel,
-  Heading,
   Input,
-  Link,
+  Checkbox,
   Stack,
-  useToast,
+  Link,
+  Button,
+  Heading,
+  Text,
+  useColorModeValue,
+  Image,
+  HStack,
+  Container,
 } from "@chakra-ui/react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import login from "../../Redux/LoginAuth/action";
-import { LOGIN_SUCCESS } from "../../Redux/LoginAuth/actionTypes";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import { Appcontext } from "../../context/Appcontext";
 
-const Login = () => {
-  const toast = useToast();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const dispatch = useDispatch();
+function Login() {
+  const [user, setUser] = useState({});
   const navigate = useNavigate();
-  const isLoading = useSelector((store) => store.LoginReducer.isLoading);
-  const responseGoogle = (response) => {
-    console.log(response);
-  };
-
-  const loginHandler = () => {
-    if (email.includes("@sastadeal.com")) {
-      if (email && password) {
-        const params = {
-          email,
-          password,
-        };
-        dispatch(login(params)).then((res) => {
-          if (res === LOGIN_SUCCESS) {
-            // console.log(res);
-            toast({
-              description: "Signed in successfully",
-              status: "success",
-              duration: 2000,
-              isClosable: true,
-            });
-            navigate("/admin", { replace: true });
-          } else {
-            toast({
-              description: "Failed",
-              status: "error",
-              duration: 2000,
-              isClosable: true,
-            });
-          }
-        });
-      }
-    } else {
-      if (email && password) {
-        const params = {
-          email,
-          password,
-        };
-        dispatch(login(params)).then((res) => {
-          if (res === LOGIN_SUCCESS) {
-            // console.log(res);
-            toast({
-              description: "Signed in successfully",
-              status: "success",
-              duration: 2000,
-              isClosable: true,
-            });
-            navigate("/", { replace: true });
-          } else {
-            toast({
-              description: "Failed",
-              status: "error",
-              duration: 2000,
-              isClosable: true,
-            });
-          }
-        });
-      }
-    }
+  const { handleLogin } = useContext(Appcontext);
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUser({ ...user, [name]: value });
   };
 
   return (
-    <Box height="85vh" bg="#ffffff" padding="0px">
-      <Navbar/>
-      <Divider orientation="horizontal" />
-      <Box
-        width="1150px"
-        position="center"
-        margin="auto"
-        height="100%"
-        padding="20px 0px 60px 0px"
-      >
-        <Box width="20%" textAlign="left" padding="">
-          <Breadcrumb fontWeight="light" fontSize="sm">
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/">Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/sign-in">Sign-In</BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
+    <Container maxW={"5xl"}>
+      <HStack>
+        <Box flex={1}>
+          <Image src="https://images.bewakoof.com/web/group-19-1617704502.png" />
         </Box>
-        <Box width="100%" padding="20px 0px 50px">
-          <Heading as="h3" size="lg" fontWeight="medium" textAlign="center">
-            Welcome Back
-          </Heading>
-        </Box>
-        <Divider orientation="horizontal" />
-        <Box width="50%" margin="0 auto" padding="50px 0px 50px 0px">
-          <Stack spacing={4}>
-            <Box>
-              <FormControl>
-                <FormLabel fontWeight="hairline">Email address *</FormLabel>
-                <Input
-                isRequired={true}
-                  focusBorderColor="black"
-                  errorBorderColor="red.300"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  size="lg"
-                  borderRadius="0px"
-                />
-              </FormControl>
-            </Box>
-            <Box>
-              <FormControl>
-                <FormLabel fontWeight="hairline">Password *</FormLabel>
-                <Input
-                isRequired={true}
-                  focusBorderColor="black"
-                  errorBorderColor="red.300"
-                  type="password"
-                  size="lg"
-                  borderRadius="0px"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </FormControl>
-            </Box>
+        <Flex
+          minH={"100vh"}
+          align={"center"}
+          justify={"center"}
+          bg={useColorModeValue("gray.50", "gray.800")}
+        >
+          <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
+            <Stack align={"center"}>
+              <Heading fontSize={"4xl"}>Login to your account</Heading>
+              <Text fontSize={"lg"} color={"gray.600"}>
+                Create New Account{" "}
+                <Link href="/signup" color={"blue.400"}>
+                  Register Here
+                </Link>
+              </Text>
+            </Stack>
+            <form onSubmit={(e) => handleLogin(e, user)}>
+              <Box
+                rounded={"lg"}
+                bg={useColorModeValue("white", "gray.700")}
+                boxShadow={"lg"}
+                p={8}
+              >
+                <Stack spacing={4}>
+                  <FormControl id="email">
+                    <FormLabel>Email address</FormLabel>
+                    <Input onChange={handleChange} name="email" type="email" />
+                  </FormControl>
+                  <FormControl id="password">
+                    <FormLabel>Password</FormLabel>
+                    <Input
+                      onChange={handleChange}
+                      name="password"
+                      type="password"
+                    />
+                  </FormControl>
+                  <Stack spacing={10}>
+                    <Stack
+                      direction={{ base: "column", sm: "row" }}
+                      align={"start"}
+                      justify={"space-between"}
+                    >
+                      <Checkbox>Remember me</Checkbox>
+                      <Link color={"blue.400"}>Forgot password?</Link>
+                    </Stack>
+                    <Button
+                      type="submit"
+                      bg={"blue.400"}
+                      color={"white"}
+                      _hover={{
+                        bgImage: "linear-gradient(to right, #58aa50 ,#f09e06 )",
+                      }}
+                      bgImage={"linear-gradient(to right, #f09e06 , #fc490b )"}
+                    >
+                      Sign in
+                    </Button>
+                  </Stack>
+                </Stack>
+              </Box>
+            </form>
           </Stack>
-          <Box paddingTop="50px">
-            Register on SastaDeal💅?{" "}
-            <Link color="teal.500" href="sign-up">
-              Sign Up
-            </Link>
-          </Box>
-          <Box>
-
-          </Box>
-          <Button
-            borderRadius="0px"
-            width="180px"
-            color="white"
-            background="#302C26"
-            padding="20px"
-            marginTop="20px"
-            _hover={{
-              color: "#302C26",
-              background: "#ffffff",
-              border: "1px solid black",
-            }}
-            onClick={loginHandler}
-            isLoading={isLoading}
-          >
-            Sign In
-          </Button>
-        </Box>
-      </Box>
-      <Footer/>
-    </Box>
+        </Flex>
+      </HStack>
+    </Container>
   );
-};
-
+}
 export default Login;
