@@ -1,8 +1,10 @@
-import { Box, Text, useBoolean,Link } from "@chakra-ui/react"
+import { Box, Text, useBoolean } from "@chakra-ui/react"
+import { useContext } from "react"
 import { useState,useEffect, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import {  useLocation, useNavigate, useSearchParams } from "react-router-dom"
+import {  useLocation, useNavigate, useSearchParams, Link } from "react-router-dom"
 import { useThrottle } from "use-throttle"
+import { Appcontext } from "../context/Appcontext"
 import {getMenData } from "../Redux/Products/action"
 // import styled from "styled-components"
 import styles from '../Styles/Navbar.module.css'
@@ -29,6 +31,9 @@ export const Navbar = () => {
     setOnChangeValue(e.target.value)
   }
 
+  const { isAuth } =
+  useContext(Appcontext)
+let username= localStorage.getItem("username")
 
   useEffect(() => {
 
@@ -77,7 +82,7 @@ export const Navbar = () => {
 
       <div className={styles.search}>
         <input type="text" value={onChangeValue} onChange={handleInputChange} placeholder="Search products & brands" />
-        {/* <button  ><i class="fas fa-search"></i> </button>        */}
+        {/* <button  ><i className="fas fa-search"></i> </button>        */}
       </div>
 
       {search.length > 0 && <Box
@@ -91,13 +96,22 @@ export const Navbar = () => {
           maxH='300px'
           m='auto'
           top={{base:'40px',sm:'40px', md:'45px' ,lg:'50px'}}
-          left={{base:'27%',sm:'20px', md:'23%' ,lg:'21%'}}
-        
+          left={{base:'27%',sm:'20px', md:'23%' ,lg:'21%'}}        
         >
           {search.map((item, i) => {
-            return <Link href={`/products/${item.id}`} key={i + 1} >
-              <Text fontSize={{base:'10px',sm:'10px', md:'12px' ,lg:'14px'}} p='10px' cursor='pointer' 
-              onClick={setShowDropdown.off}>{item.name}</Text>
+            return <Link to={`/products/${item.id}`} key={i + 1} >
+              <Text 
+              fontSize={{base:'10px',
+              sm:'10px', 
+              md:'12px' ,
+              lg:'14px'
+            }} 
+            p='10px' 
+            cursor='pointer' 
+            onClick={setShowDropdown.off}
+            >
+              {item.name}
+            </Text>
             </Link>
           })}
         </Box>}
@@ -105,25 +119,30 @@ export const Navbar = () => {
       <div className={styles.moreitemslist}>
         <div className={styles.moreitems1}>
           <Link to={"/cart"}>
-            Cart ({cart.length}) <i class="fas fa-shopping-cart"></i>
+            Cart ({cart.length}) <i className="fas fa-shopping-cart"></i>
           </Link>
         </div>
 
         <div className={styles.moreitems2}>
-          <a href="/signup" id="user_name"
-          >Sign In <i class="fas fa-user-circle"></i></a>
+          <a href="/login" id="user_name" >
+            Sign In 
+            <i className="fas fa-user-circle"></i></a>
 
           <div className={styles.signsub} >
             <ul>
-              <li><i class="far fa-user"></i><Link to="/account">Your Account</Link></li>
-              <li><i class="fas fa-box-open"></i> <Link to="/cart">Your Orders</Link>  </li>
+              <li><i className="far fa-user"></i>
+              <Link to="/account">
+                Your Account
+                </Link>
+                </li>
+              {/* <li><i className="fas fa-box-open"></i> <Link to="/cart">Your Orders</Link>  </li> */}
             </ul>
 
             <hr />
 
             <p>If you are a new user</p>
 
-            <Link to={"/sign-up"}> <h3 style={{ fontSize: "20px" }}>Register</h3></Link>
+            <Link to={"/signup"}> <h3 style={{ fontSize: "20px" }}>Register</h3></Link>
 
             <Link to={"/login"} > <h3 style={{ fontSize: "20px" }}>Login</h3>  </Link>
           </div>
