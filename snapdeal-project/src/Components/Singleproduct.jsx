@@ -30,7 +30,6 @@ export default function SingleProduct({ id, name, image, price, category, shippi
   const toast = useToast()
   const navigate = useNavigate()
 
-  const { isAuth } = useSelector((store) => store.LoginReducer.isAuth)
   const [status, setStatus] = useState(false)
   const [cartloading, setCartloading] = useState(false)
 

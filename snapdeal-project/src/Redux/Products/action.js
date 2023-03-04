@@ -63,7 +63,7 @@ export const postData = (newData) => (dispatch) => {
         }).catch((err) => dispatch(postProductsFailure()))
 }
 
-//
+
 export const getDataByID = (id) => (dispatch) => {
     dispatch(getProductsRequest())
     return axios.get(`https://snapdeal-productapi.onrender.com/${id}`)
