@@ -1,8 +1,10 @@
 import { Box, Text, useBoolean } from "@chakra-ui/react"
+import { useContext } from "react"
 import { useState,useEffect, useCallback } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import {  useLocation, useNavigate, useSearchParams, Link } from "react-router-dom"
 import { useThrottle } from "use-throttle"
+import { Appcontext } from "../context/Appcontext"
 import {getMenData } from "../Redux/Products/action"
 // import styled from "styled-components"
 import styles from '../Styles/Navbar.module.css'
@@ -29,6 +31,9 @@ export const Navbar = () => {
     setOnChangeValue(e.target.value)
   }
 
+  const { isAuth } =
+  useContext(Appcontext)
+let username= localStorage.getItem("username")
 
   useEffect(() => {
 
@@ -95,8 +100,18 @@ export const Navbar = () => {
         >
           {search.map((item, i) => {
             return <Link to={`/products/${item.id}`} key={i + 1} >
-              <Text fontSize={{base:'10px',sm:'10px', md:'12px' ,lg:'14px'}} p='10px' cursor='pointer' 
-              onClick={setShowDropdown.off}>{item.name}</Text>
+              <Text 
+              fontSize={{base:'10px',
+              sm:'10px', 
+              md:'12px' ,
+              lg:'14px'
+            }} 
+            p='10px' 
+            cursor='pointer' 
+            onClick={setShowDropdown.off}
+            >
+              {item.name}
+            </Text>
             </Link>
           })}
         </Box>}
@@ -109,8 +124,9 @@ export const Navbar = () => {
         </div>
 
         <div className={styles.moreitems2}>
-          <a href="/login" id="user_name"
-          >Sign In <i className="fas fa-user-circle"></i></a>
+          <a href="/login" id="user_name" >
+            Sign In 
+            <i className="fas fa-user-circle"></i></a>
 
           <div className={styles.signsub} >
             <ul>
