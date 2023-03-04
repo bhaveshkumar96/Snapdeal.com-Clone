@@ -11,6 +11,7 @@ import Pagination from './Pagination'
 import SearchBar from './SearchHook'
 
 const ProductList = () => {
+
     const dispatch= useDispatch()
     const {product, isLoading} = useSelector((store)=>{return {
     product: store.MensProductReducer.product,
@@ -19,7 +20,7 @@ const ProductList = () => {
     
     const location = useLocation()
   const [searchParams] = useSearchParams()
-  // console.log(location)
+ 
   const [pageFilter, setPageFilter] = useState({
     pageNumber:1,
     limit:10,
@@ -27,7 +28,7 @@ const ProductList = () => {
    })
    const {pageNumber, limit}= pageFilter;
     
-    console.log("product", product);
+    // console.log("product", product);
      
     //search functionality
     const [query,setQuery]= useState('')  

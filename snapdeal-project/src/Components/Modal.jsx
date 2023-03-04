@@ -8,8 +8,10 @@ import {
     ModalBody,
     ModalCloseButton,
   } from '@chakra-ui/react'
+  
 function BasicUsage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
