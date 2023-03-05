@@ -15,11 +15,11 @@ const BeautyProductPage = () => {
         <div className={styles["filter-component"]}>
           <SideBar />
         </div>
-        <div className={styles["product-list"]} >
+        <div className={styles["product-list"]}>
           <ProductList />
         </div>
       </div>
-      <Footer />
+      <Footer/>
     </DivWrapper>
   )
 }

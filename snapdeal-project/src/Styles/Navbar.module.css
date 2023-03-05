@@ -685,14 +685,18 @@ body {
     body {
         margin: auto;
     }
-
+    .topCat {
+       display: none;
+    }
     .container {
         margin-top: 20px;
         margin-left: 0px;
         /* width: 100%; */
         display: grid;
     }
-
+    .leftside {
+       display: none;
+    }
     .footCard {
         text-align: center;
         display: grid;
@@ -703,39 +707,24 @@ body {
         display: none;
     }
 
-    .leftside {
-        grid-area: l;
-        background-color: transparent;
-        margin: 0 0px 0 0px;
-        height: auto;
-        padding-left: 0px;
-    }
-
-    .leftside li {
+   
+    /* .leftside li {
         display: none;
         z-index: -3;
         display: flex;
         margin-bottom: 12px;
         position: relative;
         height: 36px;
-    }
+    } */
 
-    .leftside li:hover {
+    /* .leftside li:hover {
         display: none;
         z-index: -3;
         border-left: 3px solid red;
         background-color: transparent;
         border-top: 1px solid lightgrey;
         border-bottom: 1px solid lightgrey;
-    }
-
-    .topCat {
-        font-size: 11px;
-        color: #333333;
-        padding: 2px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+    } */
 
     .sublists {
         display: none;
@@ -895,43 +884,35 @@ body {
         display: grid;
         width: 100%;
     }
+    .leftside {
+      display: none;
+    }
 
     .barcode {
         display: none;
     }
 
-    .leftside {
-        grid-area: l;
-        background-color: transparent;
-        margin: 0 0px 0 0px;
-        height: auto;
-        padding-left: 0px;
-    }
 
-    .leftside li {
+    /* .leftside li {
         display: none;
         z-index: -3;
         display: flex;
         margin-bottom: 12px;
         position: relative;
         height: 36px;
-    }
+    } */
 
-    .leftside li:hover {
+    /* .leftside li:hover {
         display: none;
         z-index: -3;
         border-left: 3px solid red;
         background-color: transparent;
         border-top: 1px solid lightgrey;
         border-bottom: 1px solid lightgrey;
-    }
+    } */
 
     .topCat {
-        font-size: 10 px;
-        color: #333333;
-        padding: 2px;
-        font-weight: bold;
-        cursor: pointer;
+       display: none;
     }
 
     .sublists {

@@ -11,20 +11,49 @@ import Checkout from "../Components/Checkout/Checkout";
 import { AdminPortal } from "./AdminPortal";
 import AddCart from "../Components/AddCart";
 import { AccountDetails } from "./AccountDetails";
+import Protected from "./PrivateRoute";
 
 const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/signup" element={<Signup />} />
-      <Route path="/admin" element={<AdminPortal />} />
-      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/admin" element={
+        <Protected>
+          <AdminPortal />
+        </Protected>
+      } />
+      <Route path="/checkout" element={
+        <Protected>
+          <Checkout />
+        </Protected>
+      } />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<LandingPage />}></Route>
-      <Route path="/product" element={<ProductPage />}></Route>
-      <Route path="/products/:id" element={<SinglePage />}></Route>
-      <Route path="/products" element={<BeautyProductPage />}></Route>
-      <Route path="/cart" element={<AddCart />}></Route>
-      <Route path="/account" element={<AccountDetails />}></Route>
+      <Route path="/product" element={
+        <Protected>
+          <ProductPage />
+        </Protected>
+      }>
+      </Route>
+      <Route path="/products/:id" element={
+        <Protected>
+          <SinglePage />
+        </Protected>}></Route>
+      <Route path="/products" element={
+        <Protected>
+          <BeautyProductPage />
+        </Protected>}></Route>
+      <Route path="/cart" element={
+        <Protected>
+          <AddCart />
+        </Protected>
+      }></Route>
+      <Route path="/account" element={
+        <Protected>
+          <AccountDetails />
+        </Protected>
+      }></Route>
+
     </Routes>
   );
 };

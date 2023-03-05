@@ -9,7 +9,11 @@ import Footer from "../Components/Footer";
 const ProductPage = () => {
   return (
     <DivWrapper>
+
       {/* <Navbar/> */}
+      <Navbar />
+
+
       <Navbar />
 
       <div className={styles["products-filter-container"]}>
@@ -21,10 +25,17 @@ const ProductPage = () => {
         </div>
       </div>
 
+
       {/* <Footer/> */}
     </DivWrapper>
   );
 };
+
+      <Footer />
+    </DivWrapper>
+  )
+}
+
 
 export default ProductPage;
 
