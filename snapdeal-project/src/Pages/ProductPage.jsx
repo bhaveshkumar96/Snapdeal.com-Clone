@@ -7,13 +7,10 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 const ProductPage = () => {
+  
   return (
     <DivWrapper>
-
-      {/* <Navbar/> */}
-      <Navbar />
-
-
+      
       <Navbar />
 
       <div className={styles["products-filter-container"]}>
@@ -26,15 +23,10 @@ const ProductPage = () => {
       </div>
 
 
-      {/* <Footer/> */}
+      <Footer/>
     </DivWrapper>
   );
 };
-
-      <Footer />
-    </DivWrapper>
-  )
-}
 
 
 export default ProductPage;
