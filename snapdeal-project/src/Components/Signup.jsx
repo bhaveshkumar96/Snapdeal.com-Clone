@@ -17,6 +17,7 @@ import {
   Image,
   Container,
 } from "@chakra-ui/react";
+import { Select } from "@chakra-ui/react";
 import { useContext, useState } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
@@ -114,9 +115,19 @@ function Signup() {
                     <FormLabel>Age</FormLabel>
                     <Input onChange={handleChange} name="age" type="text" />
                   </FormControl>
+
                   <FormControl id="gender" isRequired>
                     <FormLabel>Gender</FormLabel>
-                    <Input onChange={handleChange} name="gender" type="text" />
+                    <Select
+                      placeholder="Select option"
+                      onChange={handleChange}
+                      name="gender"
+                      type="text"
+                    >
+                      <option value="option1">Male</option>
+                      <option value="option2">Female</option>
+                      <option value="option3">Others</option>
+                    </Select>
                   </FormControl>
                   <FormControl id="city" isRequired>
                     <FormLabel>City</FormLabel>
