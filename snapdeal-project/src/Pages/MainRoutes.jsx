@@ -49,9 +49,9 @@ const MainRoutes = () => {
         </Protected>
       }></Route>
       <Route path="/account" element={
-        <Protected>
+        
           <AccountDetails />
-        </Protected>
+        
       }></Route>
 
     </Routes>

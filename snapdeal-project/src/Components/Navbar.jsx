@@ -36,7 +36,7 @@ export const Navbar = () => {
   const usercity = localStorage.getItem("usercity");
   const usergender = localStorage.getItem("usergender");
 
-  
+
   const logoutfunction = () => {
     localStorage.setItem("authToken", "");
     localStorage.setItem("username", "");
