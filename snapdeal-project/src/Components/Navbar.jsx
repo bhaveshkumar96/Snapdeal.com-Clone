@@ -9,17 +9,39 @@ import {getMenData } from "../Redux/Products/action"
 // import styled from "styled-components"
 import styles from '../Styles/Navbar.module.css'
 import Loader from "./Loader"
-
+import { Appcontext } from "../context/Appcontext";
+import { useContext } from "react";
 
 export const Navbar = () => {
  
+  const { isAuth } =
+    useContext(Appcontext) || localStorage.getItem("authToken");
+
   const [onChangeValue, setOnChangeValue] = useState('');
   const [search, setSearch] = useState([]);
   const [Products, setProducts] = useState([]);
   const [showDropdown, setShowDropdown] = useBoolean()
   const throttledText = useThrottle(onChangeValue, 400)
 
- 
+  const token = localStorage.getItem("authToken");
+  const userid = localStorage.getItem("userid");
+  const username = localStorage.getItem("username");
+  const userage = localStorage.getItem("userage");
+  const useremail = localStorage.getItem("useremail");
+  const usercity = localStorage.getItem("usercity");
+  const usergender = localStorage.getItem("usergender");
+
+  const logoutfunction = () => {
+    localStorage.setItem("authToken", "");
+    localStorage.setItem("username", "");
+    localStorage.setItem("userage", "");
+    localStorage.setItem("useremail", "");
+    localStorage.setItem("usercity", "");
+    localStorage.setItem("usergender", "");
+
+    localStorage.setItem("authToken", "");
+  };
+
   const navigate= useNavigate()
   const { cart } = useSelector((store) => {
     return {
@@ -31,10 +53,7 @@ export const Navbar = () => {
     setOnChangeValue(e.target.value)
   }
 
-  const { isAuth } =
-  useContext(Appcontext)
-let username= localStorage.getItem("username")
-
+  
   useEffect(() => {
 
   }, [cart])
@@ -124,9 +143,10 @@ let username= localStorage.getItem("username")
         </div>
 
         <div className={styles.moreitems2}>
-          <a href="/login" id="user_name" >
-            Sign In 
-            <i className="fas fa-user-circle"></i></a>
+          
+          {<p>{username}</p>}
+            <i className="fas fa-user-circle"></i>
+
 
           <div className={styles.signsub} >
             <ul>
@@ -145,6 +165,13 @@ let username= localStorage.getItem("username")
             <Link to={"/signup"}> <h3 style={{ fontSize: "20px" }}>Register</h3></Link>
 
             <Link to={"/login"} > <h3 style={{ fontSize: "20px" }}>Login</h3>  </Link>
+            <button
+                onClick={() => {
+                  logoutfunction();
+                }}
+              >
+                Logout
+              </button>
           </div>
         </div>
       </div>
