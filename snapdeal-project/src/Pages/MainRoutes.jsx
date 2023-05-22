@@ -18,35 +18,35 @@ const MainRoutes = () => {
     <Routes>
       <Route path="/signup" element={<Signup />} />
       <Route path="/admin" element={
-        <Protected>
+      
           <AdminPortal />
-        </Protected>
+       
       } />
       <Route path="/checkout" element={
-        <Protected>
+       
           <Checkout />
-        </Protected>
+       
       } />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<LandingPage />}></Route>
       <Route path="/product" element={
-        <Protected>
+     
           <ProductPage />
-        </Protected>
+       
       }>
       </Route>
       <Route path="/products/:id" element={
-        <Protected>
+       
           <SinglePage />
-        </Protected>}></Route>
+       }></Route>
       <Route path="/products" element={
-        <Protected>
+
           <BeautyProductPage />
-        </Protected>}></Route>
+       }></Route>
       <Route path="/cart" element={
-        <Protected>
+       
           <AddCart />
-        </Protected>
+       
       }></Route>
       <Route path="/account" element={
         
