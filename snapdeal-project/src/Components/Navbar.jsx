@@ -60,7 +60,7 @@ export const Navbar = () => {
     const res = await data.json();
     setProducts(res);
   };
-  console.log(Products);
+  //console.log(Products);
 
   useEffect(() => {
     searchMovies();

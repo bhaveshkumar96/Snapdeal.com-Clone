@@ -17,43 +17,15 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/signup" element={<Signup />} />
-      <Route path="/admin" element={
-      
-          <AdminPortal />
-       
-      } />
-      <Route path="/checkout" element={
-       
-          <Checkout />
-       
-      } />
+      <Route path="/admin" element={<AdminPortal />} />
+      <Route path="/checkout" element={<Checkout />} />
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<LandingPage />}></Route>
-      <Route path="/product" element={
-     
-          <ProductPage />
-       
-      }>
-      </Route>
-      <Route path="/products/:id" element={
-       
-          <SinglePage />
-       }></Route>
-      <Route path="/products" element={
-
-          <BeautyProductPage />
-       }></Route>
-      <Route path="/cart" element={
-       
-          <AddCart />
-       
-      }></Route>
-      <Route path="/account" element={
-        
-          <AccountDetails />
-        
-      }></Route>
-
+      <Route path="/product" element={<ProductPage />}></Route>
+      <Route path="/products/:id" element={<SinglePage />}></Route>
+      <Route path="/products" element={<BeautyProductPage />}></Route>
+      <Route path="/cart" element={<AddCart />}></Route>
+      <Route path="/account" element={<AccountDetails />}></Route>
     </Routes>
   );
 };
