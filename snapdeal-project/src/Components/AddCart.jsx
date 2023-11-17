@@ -24,7 +24,7 @@ const AddCart = () => {
 
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <div styles={{ width: '100%', margin: 'auto' }}>
         <HStack p={4} display={{ base: "grid", md: "flex", lg: "flex" }} gap="5px">
           <Text color='blue.700' fontSize='3xl' bg={'yellow.100'} >Total Cart Items: {cart.length > 0 ? cart.length : 0}</Text>
@@ -46,7 +46,7 @@ const AddCart = () => {
         </Box>
 
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

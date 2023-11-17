@@ -94,7 +94,7 @@ const Checkout = () => {
 
   return (
     <Box className={styles.body}>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Box p={"3rem"}>
         <Text textAlign={"start"}>Home » Checkout</Text>
       </Box>
@@ -435,7 +435,7 @@ const Checkout = () => {
           </Box>
         </Grid>
       </Box>
-      <Footer/>
+      {/* <Footer/> */}
     </Box>
   );
 };

@@ -11,7 +11,7 @@ const ProductPage = () => {
   return (
     <DivWrapper>
       
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className={styles["products-filter-container"]}>
         <div className={styles["filter-component"]}>
@@ -23,7 +23,7 @@ const ProductPage = () => {
       </div>
 
 
-      <Footer/>
+      {/* <Footer/> */}
     </DivWrapper>
   );
 };

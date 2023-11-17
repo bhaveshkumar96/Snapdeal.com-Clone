@@ -28,7 +28,7 @@ export const AccountDetails = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Flex
         bg="#edf3f8"
         _dark={{

@@ -15,7 +15,7 @@ const SinglePage = () => {
   const [data, setData] = useState({})
 
   const product = useSelector((store) => store.MensProductReducer.product)
- 
+  console.log("myProduct", product)
   useEffect(() => {
 
     let searchData = product.find((el) => el.id === ID)
@@ -26,12 +26,12 @@ const SinglePage = () => {
   
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       {data && <SingleProduct image={data.image} name={data.name} price={data.price} category={data.category} shipping={data.shipping} star={data.star} />
       }
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

@@ -10,7 +10,7 @@ const BeautyProductPage = () => {
 
   return (
     <DivWrapper>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={styles["products-filter-container"]}>
         <div className={styles["filter-component"]}>
           <SideBar />
@@ -19,7 +19,7 @@ const BeautyProductPage = () => {
           <ProductList />
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </DivWrapper>
   )
 }

@@ -12,7 +12,7 @@ export const LandingPage = () => {
 
   return (
     <div>
-      <Navbar/> 
+      {/* <Navbar/>  */}
       <div className={styles.container}>
         <SidebarContent/>
         <div className={styles.barcode}>
@@ -100,7 +100,7 @@ export const LandingPage = () => {
           alt=""
         />
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

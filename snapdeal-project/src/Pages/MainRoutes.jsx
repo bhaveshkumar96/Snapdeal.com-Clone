@@ -12,9 +12,13 @@ import { AdminPortal } from "./AdminPortal";
 import AddCart from "../Components/AddCart";
 import { AccountDetails } from "./AccountDetails";
 import Protected from "./PrivateRoute";
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const MainRoutes = () => {
   return (
+    <>
+    <Navbar/>
     <Routes>
       <Route path="/signup" element={<Signup />} />
       <Route path="/admin" element={<AdminPortal />} />
@@ -27,6 +31,8 @@ const MainRoutes = () => {
       <Route path="/cart" element={<AddCart />}></Route>
       <Route path="/account" element={<AccountDetails />}></Route>
     </Routes>
+    <Footer/>
+    </>
   );
 };
 
